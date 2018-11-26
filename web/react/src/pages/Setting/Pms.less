@@ -1,0 +1,90 @@
+@import '~antd/lib/style/themes/default.less';
+@import '../../utils/utils.less';
+
+.manageMenu {
+  .menuTree {
+    width: 100%;
+    height: 654px;
+    overflow: auto;
+    border: 1px solid #e9e9e9;
+    margin-top: 24px;
+    transition: all 0.3s;
+    .ant-tree-node-content-wrapper {
+      width: calc(100% - 32px);
+    }
+  }
+  .menuTable {
+    margin-top: 24px;
+  }
+  .treeMenu {
+    position: absolute;
+    display: none;
+    z-index: 99;
+    border-radius: 4px;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.2);
+    border-color: transparent;
+    background: #fff;
+    top: 0;
+    left: 0;
+    transition: all cubic-bezier(0.22, 0.58, 0.12, 0.98) 0.2s;
+    animation: scale-in-ease cubic-bezier(0.22, 0.58, 0.12, 0.98) 0.5s;
+    .item {
+      color: #333333;
+      cursor: pointer;
+      padding: 8px 16px 8px 16px;
+      border-bottom: 1px solid #e2e2e2;
+      transition: all 0.3s;
+      &:hover {
+        background: #ffe5cf;
+      }
+    }
+  }
+}
+.menuModal {
+  text-align: center;
+  .ant-input-group-wrapper {
+    width: 100%;
+    padding: 8px 24px;
+    .ant-input-group-addon {
+      width: 80px;
+    }
+  }
+}
+
+.tableList {
+  .tableListOperator {
+    margin-bottom: 16px;
+    button {
+      margin-right: 8px;
+    }
+  }
+}
+
+.tableListForm {
+  :global {
+    .ant-form-item {
+      margin-bottom: 24px;
+      margin-right: 0;
+      display: flex;
+      > .ant-form-item-label {
+        width: auto;
+        line-height: 32px;
+        padding-right: 8px;
+      }
+      .ant-form-item-control {
+        line-height: 32px;
+      }
+    }
+    .ant-form-item-control-wrapper {
+      flex: 1;
+    }
+  }
+  .submitButtons {
+    white-space: nowrap;
+    margin-bottom: 24px;
+  }
+}
+
+.radioGroup {
+  margin-right: 18px;
+}

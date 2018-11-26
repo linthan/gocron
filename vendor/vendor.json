@@ -1,0 +1,10 @@
+{
+  "comment": "",
+  "heroku": {
+    "goVersion": "go1.11",
+    "install": ["./cmd/gocron/..."]
+  },
+  "ignore": "test",
+  "package": [],
+  "rootPath": "github.com/linthan/gocron"
+}

@@ -1,0 +1,125 @@
+# github.com/Knetic/govaluate v3.0.0+incompatible
+github.com/Knetic/govaluate
+# github.com/Tang-RoseChild/mahonia v0.0.0-20131226213531-0eef680515cc
+github.com/Tang-RoseChild/mahonia
+# github.com/Unknwon/com v0.0.0-20181010210213-41959bdd855f
+github.com/Unknwon/com
+# github.com/casbin/casbin v1.7.0
+github.com/casbin/casbin
+github.com/casbin/casbin/effect
+github.com/casbin/casbin/log
+github.com/casbin/casbin/model
+github.com/casbin/casbin/persist
+github.com/casbin/casbin/persist/file-adapter
+github.com/casbin/casbin/rbac
+github.com/casbin/casbin/rbac/default-role-manager
+github.com/casbin/casbin/util
+github.com/casbin/casbin/config
+# github.com/casbin/xorm-adapter v0.0.0-20180421154100-6d86407ce263
+github.com/casbin/xorm-adapter
+# github.com/cihub/seelog v0.0.0-20170130134532-f561c5e57575
+github.com/cihub/seelog
+github.com/cihub/seelog/archive
+github.com/cihub/seelog/archive/gzip
+github.com/cihub/seelog/archive/tar
+github.com/cihub/seelog/archive/zip
+# github.com/dgrijalva/jwt-go v3.2.0+incompatible
+github.com/dgrijalva/jwt-go
+# github.com/go-gomail/gomail v0.0.0-20160411212932-81ebce5c23df
+github.com/go-gomail/gomail
+# github.com/go-macaron/binding v0.0.0-20170611065819-ac54ee249c27
+github.com/go-macaron/binding
+# github.com/go-macaron/gzip v0.0.0-20160222043647-cad1c6580a07
+github.com/go-macaron/gzip
+# github.com/go-macaron/inject v0.0.0-20160627170012-d8a0b8677191
+github.com/go-macaron/inject
+# github.com/go-macaron/toolbox v0.0.0-20180818072302-a77f45a7ce90
+github.com/go-macaron/toolbox
+# github.com/go-sql-driver/mysql v1.4.1
+github.com/go-sql-driver/mysql
+# github.com/go-xorm/builder v0.3.2
+github.com/go-xorm/builder
+# github.com/go-xorm/core v0.6.0
+github.com/go-xorm/core
+# github.com/go-xorm/xorm v0.7.1
+github.com/go-xorm/xorm
+# github.com/golang/protobuf v1.2.0
+github.com/golang/protobuf/proto
+github.com/golang/protobuf/ptypes
+github.com/golang/protobuf/ptypes/any
+github.com/golang/protobuf/ptypes/duration
+github.com/golang/protobuf/ptypes/timestamp
+# github.com/jakecoffman/cron v0.0.0-20160912164250-57ac9950da80
+github.com/jakecoffman/cron
+# github.com/klauspost/compress v1.4.1
+github.com/klauspost/compress/gzip
+github.com/klauspost/compress/flate
+# github.com/klauspost/cpuid v1.2.0
+github.com/klauspost/cpuid
+# github.com/lib/pq v1.0.0
+github.com/lib/pq
+github.com/lib/pq/oid
+# github.com/ouqiang/goutil v1.0.3
+github.com/ouqiang/goutil
+# github.com/pkg/errors v0.8.0
+github.com/pkg/errors
+# github.com/rakyll/statik v0.1.5
+github.com/rakyll/statik/fs
+# github.com/silenceper/pool v0.0.0-20180914144519-b2541842a157
+github.com/silenceper/pool
+# github.com/urfave/cli v1.20.0
+github.com/urfave/cli
+# golang.org/x/crypto v0.0.0-20181112202954-3d3f9f413869
+golang.org/x/crypto/pbkdf2
+# golang.org/x/net v0.0.0-20181114220301-adae6a3d119a
+golang.org/x/net/context
+golang.org/x/net/trace
+golang.org/x/net/internal/timeseries
+golang.org/x/net/http2
+golang.org/x/net/http2/hpack
+golang.org/x/net/http/httpguts
+golang.org/x/net/idna
+# golang.org/x/sys v0.0.0-20180830151530-49385e6e1522
+golang.org/x/sys/unix
+# golang.org/x/text v0.3.0
+golang.org/x/text/secure/bidirule
+golang.org/x/text/unicode/bidi
+golang.org/x/text/unicode/norm
+golang.org/x/text/transform
+# google.golang.org/appengine v1.3.0
+google.golang.org/appengine/cloudsql
+# google.golang.org/genproto v0.0.0-20180817151627-c66870c02cf8
+google.golang.org/genproto/googleapis/rpc/status
+# google.golang.org/grpc v1.16.0
+google.golang.org/grpc/credentials
+google.golang.org/grpc
+google.golang.org/grpc/codes
+google.golang.org/grpc/grpclog
+google.golang.org/grpc/balancer
+google.golang.org/grpc/balancer/roundrobin
+google.golang.org/grpc/connectivity
+google.golang.org/grpc/encoding
+google.golang.org/grpc/encoding/proto
+google.golang.org/grpc/internal
+google.golang.org/grpc/internal/backoff
+google.golang.org/grpc/internal/channelz
+google.golang.org/grpc/internal/envconfig
+google.golang.org/grpc/internal/grpcrand
+google.golang.org/grpc/internal/transport
+google.golang.org/grpc/keepalive
+google.golang.org/grpc/metadata
+google.golang.org/grpc/naming
+google.golang.org/grpc/peer
+google.golang.org/grpc/resolver
+google.golang.org/grpc/resolver/dns
+google.golang.org/grpc/resolver/passthrough
+google.golang.org/grpc/stats
+google.golang.org/grpc/status
+google.golang.org/grpc/tap
+google.golang.org/grpc/balancer/base
+# gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc
+gopkg.in/alexcesaro/quotedprintable.v3
+# gopkg.in/ini.v1 v1.39.0
+gopkg.in/ini.v1
+# gopkg.in/macaron.v1 v1.3.1
+gopkg.in/macaron.v1
