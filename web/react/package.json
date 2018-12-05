@@ -53,6 +53,7 @@
 		"react-document-title": "^2.0.3",
 		"react-dom": "^16.5.1",
 		"react-fittext": "^1.0.0",
+		"react-grid-layout": "^0.16.6",
 		"react-router-dom": "^4.3.1"
 	},
 	"devDependencies": {

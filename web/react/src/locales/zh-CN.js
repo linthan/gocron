@@ -67,6 +67,8 @@ export default {
   'component.noticeIcon.cleared': '清空了',
   'component.noticeIcon.empty': '暂无数据',
   'menu.home': '首页',
+  'menu.monitor': '监控中心',
+  'menu.monitor.dashboard': '监控管理',
   'menu.task': '任务管理',
   'menu.task.manage': '定时任务',
   'menu.task.new': '创建',

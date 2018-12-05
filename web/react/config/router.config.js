@@ -26,6 +26,21 @@ export default [
       // dashboard
       { path: '/', redirect: '/task/manage' },
       {
+        path: '/monitor',
+        name: 'monitor',
+        permission: 'monitor',
+        icon: 'eye',
+        routes: [
+          {
+            path: '/monitor/dashboard',
+            name: 'dashboard',
+            permission: 'monitor.dashbord',
+            component: './Monitor/Dashboard',
+            icon: 'eye',
+          },
+        ],
+      },
+      {
         path: '/task',
         name: 'task',
         permission: 'task',
