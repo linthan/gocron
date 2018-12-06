@@ -1,0 +1,53 @@
+.panel-height-helper {
+  display: block;
+  height: 100%;
+}
+
+// Disable grid interaction indicators in fullscreen panels
+
+.panel-header {
+  &:hover {
+    transition: background-color 0.1s ease-in-out;
+    background-color: @dark-4;
+  }
+}
+
+.panel-title-container {
+  min-height: 9px;
+  cursor: move;
+  word-wrap: break-word;
+  display: block;
+}
+
+.panel-title {
+  border: 0px;
+  font-weight: @font-weight-semi-bold;
+  position: relative;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  justify-content: center;
+  padding: 4px 0 4px;
+}
+
+.panel-title-text {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: calc(100% - 38px);
+  cursor: pointer;
+  font-weight: @font-weight-semi-bold;
+
+  &:hover {
+    color: @link-hover-color;
+  }
+}
+
+.panel-content {
+  padding: @panel-padding;
+  height: calc(100% - 27px);
+  position: relative;
+
+  // Fixes scrolling on mobile devices
+  overflow: auto;
+}
