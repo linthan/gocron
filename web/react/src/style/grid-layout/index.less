@@ -3,6 +3,10 @@
   height: 100%;
 }
 
+.dashboardWrapper {
+  background-color: @gray-7;
+}
+
 // Disable grid interaction indicators in fullscreen panels
 
 .panel-header {
@@ -50,4 +54,41 @@
 
   // Fixes scrolling on mobile devices
   overflow: auto;
+}
+
+.panel-in-fullscreen {
+  .react-grid-layout {
+    height: 100% !important;
+  }
+
+  .react-grid-item {
+    display: none !important;
+    transition-property: none !important;
+  }
+
+  .panel--fullscreen {
+    display: block !important;
+    position: unset !important;
+    width: 100% !important;
+    height: 100% !important;
+    transform: translate(0px, 0px) !important;
+  }
+
+  // Disable grid interaction indicators in fullscreen panels
+  .panel-header:hover {
+    background-color: inherit;
+  }
+
+  .panel-title-container {
+    cursor: pointer;
+  }
+
+  .react-resizable-handle {
+    display: none;
+  }
+
+  // the react-grid has a height transition
+  .react-grid-layout {
+    transition-property: none;
+  }
 }

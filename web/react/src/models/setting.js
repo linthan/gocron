@@ -66,7 +66,19 @@ const updateColorWeak = colorWeak => {
 export default {
   namespace: 'setting',
   state: defaultSettings,
+  effects: {
+    *changeContentLayout({ payload }, { put }) {
+      yield put({
+        type: 'changeContentLayout',
+        payload,
+      });
+    },
+  },
+
   reducers: {
+    changeContentLayout(state, { payload }) {
+      return { ...state, contentLayout: payload };
+    },
     getSetting(state) {
       const setting = {};
       const urlParams = new URL(window.location.href);

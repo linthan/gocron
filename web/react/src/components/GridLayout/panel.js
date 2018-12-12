@@ -1,6 +1,7 @@
 import React, { PureComponent } from 'react';
 import { PanelHeader } from './panelHeader';
-import * as streamedia from '../../vendor/player/player';
+// import { WSPlayer } from '../../vendor/player/player';
+
 export class DashboardPanel extends PureComponent {
   constructor(props) {
     super(props);
@@ -10,39 +11,16 @@ export class DashboardPanel extends PureComponent {
     };
   }
   componentDidMount() {
-    let player = new streamedia.WSPlayer(this.video, {
-      // url: `${STREAM_URL}`,      // overrides mediaElement's sources
-      modules: [
-        {
-          // client module constructor. Should be subclass or BaseClient. RTSPClient by default
-          // client: RTSPClient,
-          transport: {
-            // client module constructor. Should be subclass or BaseTransport. WebsocketTransport by default
-            // constructor: WebsocketTransport,
-            options: {
-              // address of websocket proxy described below. ws${location.protocol=='https:'?'s':''}://${location.host}/ws/ by default
-              socket: 'ws://websocket_proxy_address/ws',
-              // function called player exceptions
-              errorHandler(e) {
-                alert(`Failed to start player: ${e.message}`);
-              },
-              // function to get credentials for protected streams
-              queryCredentials() {
-                return new Promise((resolve, reject) => {
-                  let c = prompt('input credentials in format user:password');
-                  if (c) {
-                    this.setCredentials.apply(this, c.split(':'));
-                    resolve();
-                  } else {
-                    reject();
-                  }
-                });
-              },
-            },
-          },
-        },
-      ],
-    });
+    // var options = {};
+    // var player = videojs('my-player', options, function onPlayerReady() {
+    //   videojs.log('Your player is ready!');
+    //   // In this context, `this` is the player that was created by Video.js.
+    //   this.play();
+    //   // How about an event listener?
+    //   this.on('ended', function() {
+    //     videojs.log('Awww...over so soon?!');
+    //   });
+    // });
   }
 
   render() {
@@ -52,14 +30,25 @@ export class DashboardPanel extends PureComponent {
         <PanelHeader panel={panel} dashboard={dashboard} />
         <div className="panel-content">
           <video
-            ref={element => (this.video = element)}
-            width="100%"
-            height="95%"
-            id="test_video"
+            style={{ width: '100%', height: '95%' }}
+            id="my-player"
+            className="video-js"
             controls
-            autoplay
-            src="rtsp://10.119.21.131:554/962618.sdp"
-          />
+            preload="auto"
+            poster="//vjs.zencdn.net/v/oceans.png"
+            data-setup="{}"
+          >
+            <source src="//vjs.zencdn.net/v/oceans.mp4" type="video/mp4" />
+            <source src="//vjs.zencdn.net/v/oceans.webm" type="video/webm" />
+            <source src="//vjs.zencdn.net/v/oceans.ogv" type="video/ogg" />
+            <p className="vjs-no-js">
+              To view this video please enable JavaScript, and consider upgrading to a web browser
+              that
+              <a href="http://videojs.com/html5-video-support/" target="_blank">
+                supports HTML5 video
+              </a>
+            </p>
+          </video>
         </div>
       </div>
     );

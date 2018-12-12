@@ -246,10 +246,12 @@ class BasicLayout extends React.PureComponent {
   };
 
   getContentStyle = () => {
-    const { fixedHeader } = this.props;
+    const { fixedHeader, location } = this.props;
+
     return {
       margin: '24px 24px 0',
       paddingTop: fixedHeader ? 64 : 0,
+      display: location && location.pathname === '/monitor/dashboard' ? 'flex' : 'block',
     };
   };
 
