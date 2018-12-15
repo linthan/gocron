@@ -6,89 +6,52 @@ import { Card, Form } from 'antd';
 import classNames from 'classnames';
 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
-import { DashboardGrid } from '@/components/GridLayout';
+import { DashboardGrid } from '@/components/GridLayout/DashboardGrid';
 import router from 'umi/router';
 import styles from './Dashboard.less';
+import { DashboardModel } from '@/core/dashboard/dashboard_model';
 
 export const FormItem = Form.Item;
 
-@connect(({ crontask, loading }) => ({
-  crontask,
-  loading: loading.models.crontask,
+@connect(({ monitor, loading }) => ({
+  monitor,
+  loading: loading.models.monitor,
 }))
 @Form.create()
 class Manage extends PureComponent {
   constructor(props) {
     super(props);
-    const { dispatch } = props;
+    this.dashboard = new DashboardModel({}, this, { canEdit: true, editable: true });
+    this.dashboard.addPanel({
+      type: 'pannel',
+      title: '教工一楼',
+      gridPos: { x: 0, y: 0, h: 8, w: 8 },
+    });
+    this.dashboard.addPanel({
+      type: 'pannel',
+      title: '教工二楼',
+      gridPos: { x: 0, y: 0, h: 8, w: 8 },
+    });
   }
-  state = {
-    fullScreen: false,
-  };
+  componentDidMount() {
+    // const { dispatch } = this.props;
+    // dispatch({ type: 'monitor/initData' });
+  }
 
   render() {
-    const { fullScreen } = this.state;
+    const { dashboard } = this.props;
+    console.log(dashboard);
     const classWrapper = classNames({
-      'panel-in-fullscreen': fullScreen,
+      'panel-in-fullscreen': this.dashboard.meta.fullscreen,
       dashboardWrapper: true,
     });
     return (
       <div className={classWrapper} style={{ flex: 'auto', minHeight: 0 }}>
+        <div>hah</div>
         <DashboardGrid
-          dashboard={{
-            fullScreen: flag => {
-              this.setState({ fullScreen: !!flag });
-            },
-            meta: { canEdit: true },
-            panels: [
-              {
-                id: 1,
-                title: '教工一楼',
-                type: 'pannel',
-                fullscreen: true,
-                gridPos: { x: 0, y: 0, w: 5, h: 5 },
-                resizeDone: () => {},
-                updateGridPos: newPos => {
-                  let sizeChanged = false;
-
-                  if (this.gridPos.w !== newPos.w || this.gridPos.h !== newPos.h) {
-                    sizeChanged = true;
-                  }
-
-                  this.gridPos.x = newPos.x;
-                  this.gridPos.y = newPos.y;
-                  this.gridPos.w = newPos.w;
-                  this.gridPos.h = newPos.h;
-
-                  if (sizeChanged) {
-                    // this.events.emit('panel-size-changed');
-                  }
-                },
-              },
-              {
-                id: 2,
-                title: '教工2楼',
-                type: 'pannel',
-                gridPos: { x: 0, y: 0, w: 5, h: 5 },
-                resizeDone: () => {},
-                updateGridPos: newPos => {
-                  let sizeChanged = false;
-
-                  if (this.gridPos.w !== newPos.w || this.gridPos.h !== newPos.h) {
-                    sizeChanged = true;
-                  }
-
-                  this.gridPos.x = newPos.x;
-                  this.gridPos.y = newPos.y;
-                  this.gridPos.w = newPos.w;
-                  this.gridPos.h = newPos.h;
-
-                  if (sizeChanged) {
-                    // this.events.emit('panel-size-changed');
-                  }
-                },
-              },
-            ],
+          dashboard={this.dashboard}
+          getPanelContainer={() => {
+            this.dashboard;
           }}
         />
       </div>
