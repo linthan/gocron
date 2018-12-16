@@ -2,7 +2,7 @@ import React, { PureComponent, Fragment } from 'react';
 import { connect } from 'dva';
 import moment from 'moment';
 import GridLayout from 'react-grid-layout';
-import { Card, Form } from 'antd';
+import { Card, Form, Button } from 'antd';
 import classNames from 'classnames';
 
 import PageHeaderWrapper from '@/components/PageHeaderWrapper';
@@ -37,6 +37,7 @@ class Manage extends PureComponent {
       title: '教工二楼',
       gridPos: { x: 0, y: 0, h: 8, w: 8 },
     });
+
     this.dashboard.events.on('view-mode-changed', panel => {
       console.log('view-mode-changed', panel.fullscreen);
       if (panel.fullscreen) {
@@ -60,7 +61,27 @@ class Manage extends PureComponent {
     });
     return (
       <div className={classWrapper} style={{ flex: 'auto', minHeight: 0 }}>
-        <div>hah</div>
+        <div className={styles.dashboardNav}>
+          <div className={styles.navButtons}>
+            <Button
+              style={{ marginRight: 6 }}
+              onClick={() => {
+                this.dashboard.addPanel({
+                  type: 'pannel',
+                  title: '教工二楼',
+                  gridPos: { x: 0, y: 0, h: 8, w: 8 },
+                });
+              }}
+              type="primary"
+              icon="plus"
+            >
+              添加
+            </Button>
+            <Button style={{ marginRight: 6 }} type="primary" icon="save">
+              保存
+            </Button>
+          </div>
+        </div>
         <DashboardGrid
           dashboard={this.dashboard}
           getPanelContainer={() => {
