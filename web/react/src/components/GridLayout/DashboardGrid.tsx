@@ -126,11 +126,13 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public onLayoutChange(newLayout) {
-    for (const newPos of newLayout) {
-      this.panelMap[newPos.i].updateGridPos(newPos);
+    if (!this.dashboard.meta.fullscreen) {
+      for (const newPos of newLayout) {
+        this.panelMap[newPos.i].updateGridPos(newPos);
+      }
+      console.log('layout', this.buildLayout());
+      this.dashboard.sortPanelsByGridPos();
     }
-
-    this.dashboard.sortPanelsByGridPos();
   }
 
   public triggerForceUpdate() {
@@ -144,7 +146,9 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public updateGridPos(item, layout) {
-    this.panelMap[item.i].updateGridPos(item);
+    if (!this.dashboard.meta.fullscreen) {
+      this.panelMap[item.i].updateGridPos(item);
+    }
 
     // react-grid-layout has a bug (#670), and onLayoutChange() is only called when the component is mounted.
     // So it's required to call it explicitly when panel resized or moved to save layout changes.
@@ -152,16 +156,22 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public onResize(layout, oldItem, newItem) {
-    this.panelMap[newItem.i].updateGridPos(newItem);
+    if (!this.dashboard.meta.fullscreen) {
+      this.panelMap[newItem.i].updateGridPos(newItem);
+    }
   }
 
   public onResizeStop(layout, oldItem, newItem) {
-    this.updateGridPos(newItem, layout);
-    this.panelMap[newItem.i].resizeDone();
+    if (!this.dashboard.meta.fullscreen) {
+      this.updateGridPos(newItem, layout);
+      this.panelMap[newItem.i].resizeDone();
+    }
   }
 
   public onDragStop(layout, oldItem, newItem) {
-    this.updateGridPos(newItem, layout);
+    if (!this.dashboard.meta.fullscreen) {
+      this.updateGridPos(newItem, layout);
+    }
   }
 
   public componentDidMount() {
@@ -191,10 +201,13 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   public render() {
     return (
       <SizedReactLayoutGrid
-        className={classNames({ layout: true, animated: this.state.animated })}
+        className={classNames({
+          layout: true,
+          animated: this.state.animated,
+        })}
         layout={this.buildLayout()}
-        isResizable={this.dashboard.meta.canEdit}
-        isDraggable={this.dashboard.meta.canEdit}
+        isResizable={!this.dashboard.meta.fullscreen}
+        isDraggable={!this.dashboard.meta.fullscreen}
         onLayoutChange={this.onLayoutChange}
         onWidthChange={this.onWidthChange}
         onDragStop={this.onDragStop}

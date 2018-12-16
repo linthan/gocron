@@ -21,7 +21,12 @@ export const FormItem = Form.Item;
 class Manage extends PureComponent {
   constructor(props) {
     super(props);
-    this.dashboard = new DashboardModel({}, this, { canEdit: true, editable: true });
+    this.state = { fullScreen: false };
+    this.dashboard = new DashboardModel(
+      {},
+      // this,
+      { canEdit: true, editable: true }
+    );
     this.dashboard.addPanel({
       type: 'pannel',
       title: '教工一楼',
@@ -32,6 +37,14 @@ class Manage extends PureComponent {
       title: '教工二楼',
       gridPos: { x: 0, y: 0, h: 8, w: 8 },
     });
+    this.dashboard.events.on('view-mode-changed', panel => {
+      console.log('view-mode-changed', panel.fullscreen);
+      if (panel.fullscreen) {
+        this.setState({ fullScreen: true });
+      } else {
+        this.setState({ fullScreen: false });
+      }
+    });
   }
   componentDidMount() {
     // const { dispatch } = this.props;
@@ -40,9 +53,9 @@ class Manage extends PureComponent {
 
   render() {
     const { dashboard } = this.props;
-    console.log(dashboard);
+    const { fullScreen } = this.state;
     const classWrapper = classNames({
-      'panel-in-fullscreen': this.dashboard.meta.fullscreen,
+      'panel-in-fullscreen': fullScreen,
       dashboardWrapper: true,
     });
     return (

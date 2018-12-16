@@ -33,7 +33,7 @@ export class PanelHeader extends PureComponent {
         <Menu.Item>
           <a
             onClick={() => {
-              dashboard.fullScreen(false);
+              dashboard.setViewMode(panel, false, false);
             }}
             style={menuStyle}
           >

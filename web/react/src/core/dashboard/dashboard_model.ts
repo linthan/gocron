@@ -58,8 +58,8 @@ export class DashboardModel {
   private originalTime: any;
   private originalTemplating: any;
 
-  constructor(data, container, meta?) {
-    this.container = container;
+  constructor(data, meta?) {
+    // this.container = container;
     if (!data) {
       data = {};
     }
@@ -187,11 +187,10 @@ export class DashboardModel {
   public setViewMode(panel: PanelModel, fullscreen: boolean, isEditing: boolean) {
     this.meta.fullscreen = fullscreen;
     this.meta.isEditing = isEditing && this.meta.canEdit;
-
     panel.setViewMode(fullscreen, this.meta.isEditing);
 
     this.events.emit('view-mode-changed', panel);
-    this.container.forceUpdate();
+    // this.container.forceUpdate();
   }
 
   public getNextPanelId() {

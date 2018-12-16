@@ -64,6 +64,7 @@ export class PanelModel {
   }
 
   public updateGridPos(newPos: GridPos) {
+    console.log('-------------------');
     let sizeChanged = false;
 
     if (this.gridPos.w !== newPos.w || this.gridPos.h !== newPos.h) {
