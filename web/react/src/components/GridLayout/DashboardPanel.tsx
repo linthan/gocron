@@ -1,8 +1,8 @@
 import { DashboardModel } from '@/core/dashboard/dashboard_model';
 import { PanelModel } from '@/core/dashboard/panel_model';
 import React, { PureComponent } from 'react';
-import { PanelContainer } from './PanelContainer';
-import { PanelHeader } from './panelHeader';
+import { PanelHeader } from './PanelHeader/PanelHeader';
+import { DashboardRow } from './DashboardRow';
 
 // tslint:disable-next-line:interface-name
 export interface DashboardPanelProps {
@@ -12,10 +12,11 @@ export interface DashboardPanelProps {
 export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
   public element: HTMLDivElement;
   public panel: PanelModel;
+  specialPanels = {};
   //   public dashboard: DashboardModel;
   constructor(props) {
     super(props);
-
+    this.specialPanels['row'] = this.renderRow.bind(this);
     this.state = { pluginExports: null };
   }
   public componentDidMount() {
@@ -30,9 +31,18 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
     //   });
     // });
   }
+  isSpecial() {
+    return this.specialPanels[this.props.panel.type];
+  }
+  renderRow() {
+    return <DashboardRow panel={this.props.panel} dashboard={this.props.dashboard} />;
+  }
 
   public render() {
     const { panel, dashboard } = this.props;
+    if (this.isSpecial()) {
+      return this.specialPanels[this.props.panel.type]();
+    }
     return (
       <div ref={element => (this.element = element)} className="panel-height-helper">
         <PanelHeader panel={panel} dashboard={dashboard} />

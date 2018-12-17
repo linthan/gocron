@@ -3,8 +3,8 @@ import React from 'react';
 import ReactGridLayout from 'react-grid-layout';
 import sizeMe from 'react-sizeme';
 import { GRID_CELL_HEIGHT, GRID_CELL_VMARGIN, GRID_COLUMN_COUNT } from '../../core/constants';
-import { DashboardModel } from '../../core/dashboard/dashboard_model';
-import { PanelModel } from '../../core/dashboard/panel_model';
+import { DashboardModel } from '@/core/dashboard/dashboard_model';
+import { PanelModel } from '@/core/dashboard/panel_model';
 import { DashboardPanel } from './DashboardPanel';
 import { PanelContainer } from './PanelContainer';
 

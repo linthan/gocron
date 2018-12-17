@@ -37,6 +37,16 @@ class Manage extends PureComponent {
       title: '教工二楼',
       gridPos: { x: 0, y: 0, h: 8, w: 8 },
     });
+    this.dashboard.addPanel({
+      title: '学生一区',
+      type: 'row',
+    });
+    this.dashboard.addPanel({
+      type: 'pannel',
+      title: '教工二楼',
+      gridPos: { x: 0, y: 0, h: 8, w: 8 },
+    });
+    this.dashboard.addPanel({ type: 'row', title: '学生二区' });
 
     this.dashboard.events.on('view-mode-changed', panel => {
       console.log('view-mode-changed', panel.fullscreen);

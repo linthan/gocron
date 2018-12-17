@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { PanelHeader } from './panelHeader';
+import { PanelHeader } from './PanelHeader/PanelHeader';
 // import { WSPlayer } from '../../vendor/player/player';
 
 export class DashboardPanel extends PureComponent {
