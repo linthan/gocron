@@ -30,6 +30,7 @@
     "@antv/data-set": "^0.9.6",
     "@babel/runtime": "^7.1.2",
     "antd": "^3.10.0",
+    "baron": "^3.0.3",
     "bizcharts": "^3.2.2",
     "bizcharts-plugin-slider": "^2.0.3",
     "bp_event": "^1.2.0",
@@ -58,6 +59,7 @@
     "react-dom": "^16.5.1",
     "react-fittext": "^1.0.0",
     "react-grid-layout": "^0.16.6",
+    "react-highlight-words": "^0.14.0",
     "react-router-dom": "^4.3.1",
     "react-sizeme": "^2.5.2",
     "tinycolor2": "^1.4.1"
