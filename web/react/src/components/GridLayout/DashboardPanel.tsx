@@ -3,7 +3,7 @@ import { PanelModel } from '@/core/dashboard/panel_model';
 import React, { PureComponent } from 'react';
 import { PanelHeader } from './PanelHeader/PanelHeader';
 import { DashboardRow } from './DashboardRow';
-
+import { AddPanelPanel } from './AddPanelPanel';
 // tslint:disable-next-line:interface-name
 export interface DashboardPanelProps {
   panel: PanelModel;
@@ -17,6 +17,7 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
   constructor(props) {
     super(props);
     this.specialPanels['row'] = this.renderRow.bind(this);
+    this.specialPanels['add-panel'] = this.renderAddPanel.bind(this);
     this.state = { pluginExports: null };
   }
   public componentDidMount() {
@@ -36,6 +37,9 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
   }
   renderRow() {
     return <DashboardRow panel={this.props.panel} dashboard={this.props.dashboard} />;
+  }
+  renderAddPanel() {
+    return <AddPanelPanel panel={this.props.panel} dashboard={this.props.dashboard} />;
   }
 
   public render() {

@@ -77,9 +77,9 @@ class Manage extends PureComponent {
               style={{ marginRight: 6 }}
               onClick={() => {
                 this.dashboard.addPanel({
-                  type: 'pannel',
-                  title: '教工二楼',
-                  gridPos: { x: 0, y: 0, h: 8, w: 8 },
+                  type: 'add-panel',
+                  gridPos: { x: 0, y: 0, w: 12, h: 9 },
+                  title: 'Panel Title',
                 });
               }}
               type="primary"

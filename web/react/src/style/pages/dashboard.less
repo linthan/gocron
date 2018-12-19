@@ -1,0 +1,24 @@
+.panel-container {
+  background-color: @panel-bg;
+  border: @panel-border;
+  position: relative;
+  border-radius: 3px;
+  height: 100%;
+
+  &.panel-transparent {
+    background-color: transparent;
+    border: none;
+  }
+
+  &:hover {
+    .panel-menu-toggle {
+      visibility: visible;
+      transition: opacity 0.1s ease-in 0.2s;
+      opacity: 1;
+    }
+  }
+
+  &--is-editing {
+    height: auto;
+  }
+}
