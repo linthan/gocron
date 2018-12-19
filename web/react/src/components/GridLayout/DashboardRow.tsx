@@ -1,6 +1,6 @@
 import React from 'react';
 import classNames from 'classnames';
-import { Icon, Modal } from 'antd';
+import { Icon, Modal, Row, Button } from 'antd';
 import { DashboardModel } from '@/core/dashboard/dashboard_model';
 import { PanelModel } from '@/core/dashboard/panel_model';
 
@@ -52,6 +52,7 @@ export class DashboardRow extends React.Component<DashboardRowProps, any> {
   }
 
   render() {
+    const { dashboard, panel } = this.props;
     const { modalVisible } = this.state;
     const classes = classNames({
       'dashboard-row': true,
@@ -91,6 +92,12 @@ export class DashboardRow extends React.Component<DashboardRowProps, any> {
         )}
         {canEdit && <div className="dashboard-row__drag grid-drag-handle" />}
         <Modal
+          title={
+            <div>
+              <Icon style={{ marginRight: 6 }} type="delete" />
+              删除面板
+            </div>
+          }
           visible={modalVisible}
           onCancel={() => {
             this.setState({ modalVisible: false });
@@ -98,7 +105,40 @@ export class DashboardRow extends React.Component<DashboardRowProps, any> {
           onOk={() => {
             this.setState({ modalVisible: false });
           }}
-        />
+          footer={null}
+        >
+          <Row style={{ marginBottom: 20 }}>
+            <h3>删除行并删除所有面板？</h3>
+          </Row>
+          <Row>
+            <Button
+              onClick={() => {
+                dashboard.removeRow(panel, false);
+              }}
+              style={{ marginRight: 6 }}
+              type="primary"
+            >
+              只删除行
+            </Button>
+            <Button
+              onClick={() => {
+                dashboard.removeRow(panel, true);
+              }}
+              style={{ marginRight: 6 }}
+              type="danger"
+            >
+              是
+            </Button>
+            <Button
+              onClick={() => {
+                this.setState({ modalVisible: false });
+              }}
+              style={{ marginRight: 6 }}
+            >
+              否
+            </Button>
+          </Row>
+        </Modal>
       </div>
     );
   }
