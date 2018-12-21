@@ -2,10 +2,10 @@ import React from 'react';
 import _ from 'lodash';
 import classNames from 'classnames';
 import Highlighter from 'react-highlight-words';
-import { DashboardModel } from '../../core/dashboard/dashboard_model';
-import { PanelModel } from '../../core/dashboard/panel_model';
-import ScrollBar from '../../components/ScrollBar/ScrollBar';
-
+import { DashboardModel } from '@/core/dashboard/dashboard_model';
+import { PanelModel } from '@/core/dashboard/panel_model';
+import ScrollBar from '@/components/ScrollBar/ScrollBar';
+import { panelPlugins } from './panelplugin';
 export interface AddPanelPanelProps {
   panel: PanelModel;
   dashboard: DashboardModel;
@@ -31,79 +31,7 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
   }
 
   getPanelPlugins(filter) {
-    let panels = [
-      {
-        id: 'graph',
-        name: '1',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-      {
-        id: 'graph',
-        name: '2',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 3,
-      },
-      {
-        id: 'graph',
-        name: '4',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 5,
-      },
-      {
-        id: 'graph',
-        name: '5',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 6,
-      },
-      {
-        id: 'graph',
-        name: '7',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-      {
-        id: 'graph',
-        name: '8',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-      {
-        id: 'graph',
-        name: '9',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 9,
-      },
-      {
-        id: 'graph',
-        name: '1',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-      {
-        id: 'graph',
-        name: '1',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-      {
-        id: 'graph',
-        name: '1',
-        info: { logos: { small: '' } },
-        hideFromList: false,
-        sort: 1,
-      },
-    ];
-    panels = _.chain(panels)
+    let panels = _.chain(panelPlugins)
       .filter({ hideFromList: false })
       .map(item => item)
       .value();

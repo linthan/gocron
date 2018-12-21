@@ -18,7 +18,10 @@
     "experimentalDecorators": true,
     "paths": {
       "@/*": ["./src/*"],
-      "@/core": ["./src/core"]
+      "@/components": ["./src/components"],
+      "@/core": ["./src/core"],
+      "@/style": ["./src/style"],
+      "@/vendor": ["./src/vendor"]
     }
   },
   "include": ["./src"],

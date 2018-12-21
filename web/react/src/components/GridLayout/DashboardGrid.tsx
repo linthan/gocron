@@ -130,7 +130,6 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
       for (const newPos of newLayout) {
         this.panelMap[newPos.i].updateGridPos(newPos);
       }
-      console.log('layout', this.buildLayout());
       this.dashboard.sortPanelsByGridPos();
     }
   }
@@ -190,7 +189,12 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
       panelElements.push(
         /** panel-id is set for html bookmarks */
         <div key={panel.id.toString()} className={panelClasses} id={`panel-${panel.id.toString()}`}>
-          <DashboardPanel panel={panel} dashboard={this.props.dashboard} />
+          <DashboardPanel
+            panel={panel}
+            dashboard={this.props.dashboard}
+            isEditing={panel.isEditing}
+            isFullscreen={panel.fullscreen}
+          />
         </div>
       );
     }

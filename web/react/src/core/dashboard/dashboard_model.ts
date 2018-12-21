@@ -250,6 +250,18 @@ export class DashboardModel {
     });
   }
 
+  panelInitialized(panel: PanelModel) {
+    // panel.initialized();
+
+    if (!this.otherPanelInFullscreen(panel)) {
+      // panel.refresh();
+    }
+  }
+
+  otherPanelInFullscreen(panel: PanelModel) {
+    return this.meta.fullscreen && !panel.fullscreen;
+  }
+
   public cleanUpRepeats() {
     if (this.snapshot || this.templating.list.length === 0) {
       return;

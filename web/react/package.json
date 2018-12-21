@@ -41,6 +41,7 @@
     "enquire-js": "^0.2.1",
     "eventemitter3": "^3.1.0",
     "hash.js": "^1.1.5",
+    "jquery": "^3.3.1",
     "lodash": "^4.17.11",
     "lodash-decorators": "^6.0.0",
     "memoize-one": "^4.0.0",
@@ -57,11 +58,13 @@
     "react-copy-to-clipboard": "^5.0.1",
     "react-document-title": "^2.0.3",
     "react-dom": "^16.5.1",
+    "react-draggable": "^3.0.5",
     "react-fittext": "^1.0.0",
     "react-grid-layout": "^0.16.6",
     "react-highlight-words": "^0.14.0",
     "react-router-dom": "^4.3.1",
     "react-sizeme": "^2.5.2",
+    "react-virtualized": "^9.21.0",
     "tinycolor2": "^1.4.1"
   },
   "devDependencies": {

@@ -25,6 +25,8 @@ export class PanelModel {
   public panels?: any;
   public soloMode?: boolean;
 
+  transparent: boolean;
+
   // non persisted
   public fullscreen: boolean;
   public isEditing: boolean;
@@ -64,7 +66,6 @@ export class PanelModel {
   }
 
   public updateGridPos(newPos: GridPos) {
-    console.log('-------------------');
     let sizeChanged = false;
 
     if (this.gridPos.w !== newPos.w || this.gridPos.h !== newPos.h) {
