@@ -76,6 +76,12 @@ class Manage extends PureComponent {
             <Button
               style={{ marginRight: 6 }}
               onClick={() => {
+                if (
+                  this.dashboard.panels.length > 0 &&
+                  this.dashboard.panels[0].type === 'add-panel'
+                ) {
+                  return; // Return if the "Add panel" exists already
+                }
                 this.dashboard.addPanel({
                   type: 'add-panel',
                   gridPos: { x: 0, y: 0, w: 12, h: 9 },

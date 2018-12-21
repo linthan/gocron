@@ -20,7 +20,7 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
     this.panelSizeChanged = this.panelSizeChanged.bind(this);
 
     this.state = {
-      // panelPlugins: this.getPanelPlugins(''),
+      panelPlugins: this.getPanelPlugins(''),
       // copiedPanelPlugins: this.getCopiedPanelPlugins(''),
       filter: '',
       tab: 'Add',
@@ -29,6 +29,99 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
   componentDidMount() {
     this.props.panel.events.on('panel-size-changed', this.panelSizeChanged);
   }
+
+  getPanelPlugins(filter) {
+    let panels = [
+      {
+        id: 'graph',
+        name: '1',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+      {
+        id: 'graph',
+        name: '2',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 3,
+      },
+      {
+        id: 'graph',
+        name: '4',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 5,
+      },
+      {
+        id: 'graph',
+        name: '5',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 6,
+      },
+      {
+        id: 'graph',
+        name: '7',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+      {
+        id: 'graph',
+        name: '8',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+      {
+        id: 'graph',
+        name: '9',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 9,
+      },
+      {
+        id: 'graph',
+        name: '1',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+      {
+        id: 'graph',
+        name: '1',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+      {
+        id: 'graph',
+        name: '1',
+        info: { logos: { small: '' } },
+        hideFromList: false,
+        sort: 1,
+      },
+    ];
+    panels = _.chain(panels)
+      .filter({ hideFromList: false })
+      .map(item => item)
+      .value();
+
+    // add special row type
+    panels = this.filterPanels(panels, filter);
+
+    // add sort by sort property
+    return _.sortBy(panels, 'sort');
+  }
+
+  filterPanels(panels, filter) {
+    const regex = new RegExp(filter, 'i');
+    return panels.filter(panel => {
+      return regex.test(panel.name);
+    });
+  }
+
   panelSizeChanged() {
     setTimeout(() => {
       this.scrollbar.update();
@@ -79,6 +172,7 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
       // copiedPanelPlugins: this.getCopiedPanelPlugins(''),
     });
   }
+
   onAddPanel = panelPluginInfo => {
     const dashboard = this.props.dashboard;
     const { gridPos } = this.props.panel;
@@ -101,10 +195,18 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
   filterChange(evt) {
     this.setState({
       filter: evt.target.value,
-      // panelPlugins: this.getPanelPlugins(evt.target.value),
-      // copiedPanelPlugins: this.getCopiedPanelPlugins(evt.target.value),
+      panelPlugins: this.getPanelPlugins(evt.target.value),
     });
   }
+  filterKeyPress(evt) {
+    if (evt.key === 'Enter') {
+      const panel = _.head(this.state.panelPlugins);
+      if (panel) {
+        this.onAddPanel(panel);
+      }
+    }
+  }
+
   render() {
     const addClass = classNames({
       'active active--panel': this.state.tab === 'Add',
@@ -118,15 +220,9 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
 
     let panelTab;
 
-    // if (this.state.tab === 'Add') {
-    //   panelTab = this.state.panelPlugins.map(this.renderPanelItem);
-    // } else if (this.state.tab === 'Copy') {
-    //   if (this.state.copiedPanelPlugins.length > 0) {
-    //     panelTab = this.state.copiedPanelPlugins.map(this.renderPanelItem);
-    //   } else {
-    //     panelTab = this.noCopiedPanelPlugins();
-    //   }
-    // }
+    if (this.state.tab === 'Add') {
+      panelTab = this.state.panelPlugins.map(this.renderPanelItem);
+    }
 
     return (
       <div className="panel-container add-panel-container">
@@ -166,7 +262,7 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
                   placeholder="Panel Search Filter"
                   value={this.state.filter}
                   onChange={this.filterChange.bind(this)}
-                  // onKeyPress={this.filterKeyPress.bind(this)}
+                  onKeyPress={this.filterKeyPress.bind(this)}
                 />
                 <i className="gf-form-input-icon fa fa-search" />
               </label>
