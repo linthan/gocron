@@ -2,6 +2,8 @@
 import React, { PureComponent } from 'react';
 import { AutoSizer } from 'react-virtualized';
 
+import { PanelHeader } from './PanelHeader/PanelHeader';
+
 import { DashboardModel } from '@/core/dashboard/dashboard_model';
 import { PanelModel } from '@/core/dashboard/panel_model';
 
@@ -57,7 +59,8 @@ export class PanelChrome extends PureComponent<Props, State> {
   }
 
   render() {
-    const { panel } = this.props;
+    const { panel, dashboard } = this.props;
+    const { timeInfo } = this.state;
     const { transparent } = panel;
     // const PanelComponent = plugin.exports.Panel;
     const containerClassNames = `panel-container panel-container--absolute ${
@@ -70,7 +73,16 @@ export class PanelChrome extends PureComponent<Props, State> {
           if (width === 0) {
             return null;
           }
-          return <div className={containerClassNames} />;
+          return (
+            <div className={containerClassNames}>
+              <PanelHeader
+                panel={panel}
+                dashboard={dashboard}
+                timeInfo={timeInfo}
+                title={panel.title}
+              />
+            </div>
+          );
         }}
       </AutoSizer>
     );

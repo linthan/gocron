@@ -219,3 +219,50 @@
 @scrollbarBackground: @gray-5;
 @scrollbarBackground2: @gray-5;
 @scrollbarBorder: @gray-4;
+
+// Dropdowns
+// -------------------------
+@dropdownBackground: @white;
+@dropdownBorder: @gray-4;
+@dropdownDividerTop: @gray-6;
+@dropdownDividerBottom: @white;
+@dropdownDivider: @dropdownDividerTop;
+
+@dropdownLinkColor: @dark-3;
+@dropdownLinkColorHover: @link-color;
+@dropdownLinkColorActive: @link-color;
+
+@dropdownLinkBackgroundActive: @gray-6;
+@dropdownLinkBackgroundHover: @gray-6;
+
+// Links
+// -------------------------
+@link-color: @gray-1;
+@link-color-disabled: lighten(@link-color, 30%);
+@link-hover-color: darken(@link-color, 20%);
+@external-link-color: @blue-light;
+
+// Menu dropdowns
+// -------------------------
+@menu-dropdown-bg: @gray-7;
+@menu-dropdown-hover-bg: @gray-6;
+@menu-dropdown-shadow: 5px 5px 10px -5px @gray-1;
+// Z-index master list
+// -------------------------
+// Used for a bird's eye view of components dependent on the z-axis
+// Try to avoid customizing these :)
+@zindex-dropdown: 1000;
+@zindex-navbar-fixed: 1020;
+@zindex-sidemenu: 1025;
+@zindex-tooltip: 1030;
+@zindex-modal-backdrop: 1040;
+@zindex-modal: 1050;
+@zindex-typeahead: 1060;
+
+// Sidemenu
+// -------------------------
+@side-menu-bg: @dark-2;
+@side-menu-bg-mobile: rgba(0, 0, 0, 0); //@gray-6;
+@side-menu-item-hover-bg: @gray-1;
+@side-menu-shadow: 5px 0px 10px -5px @gray-1;
+@side-menu-link-color: @gray-6;
