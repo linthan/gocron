@@ -3,31 +3,13 @@ import { DashboardModel } from '@/core/dashboard/dashboard_model';
 import { PanelModel } from '@/core/dashboard/panel_model';
 
 export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
-  // const onViewPanel = () => {
-  //     store.dispatch(
-  //         updateLocation({
-  //             query: {
-  //                 panelId: panel.id,
-  //                 edit: null,
-  //                 fullscreen: true,
-  //             },
-  //             partial: true,
-  //         })
-  //     );
-  // };
+  const onViewPanel = () => {
+    dashboard.setViewMode(panel, true, false);
+  };
 
-  // const onEditPanel = () => {
-  //     store.dispatch(
-  //         updateLocation({
-  //             query: {
-  //                 panelId: panel.id,
-  //                 edit: true,
-  //                 fullscreen: true,
-  //             },
-  //             partial: true,
-  //         })
-  //     );
-  // };
+  const onEditPanel = () => {
+    dashboard.setViewMode(panel, false, false);
+  };
 
   const onSharePanel = () => {
     // sharePanel(dashboard, panel);
@@ -54,7 +36,7 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
   menu.push({
     text: 'View',
     iconClassName: 'fa fa-fw fa-eye',
-    // onClick: onViewPanel,
+    onClick: onViewPanel,
     shortcut: 'v',
   });
 
@@ -62,7 +44,7 @@ export const getPanelMenu = (dashboard: DashboardModel, panel: PanelModel) => {
     menu.push({
       text: 'Edit',
       iconClassName: 'fa fa-fw fa-edit',
-      // onClick: onEditPanel,
+      onClick: onEditPanel,
       shortcut: 'e',
     });
   }

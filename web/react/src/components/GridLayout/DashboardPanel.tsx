@@ -91,16 +91,19 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
         <PanelResizer
           isEditing={!!isEditing}
           panel={panel}
-          render={(panelHeight: number | 'inherit') => (
-            <div
-              className={panelWrapperClass}
-              // onMouseEnter={this.onMouseEnter}
-              // onMouseLeave={this.onMouseLeave}
-              style={{ height: panelHeight }}
-            >
-              {this.renderReactPanel()}
-            </div>
-          )}
+          render={(panelHeight: number | 'inherit') => {
+            console.log('--------------', panelHeight);
+            return (
+              <div
+                className={panelWrapperClass}
+                // onMouseEnter={this.onMouseEnter}
+                // onMouseLeave={this.onMouseLeave}
+                style={{ height: panelHeight }}
+              >
+                {this.renderReactPanel()}
+              </div>
+            );
+          }}
         />
       </div>
     );

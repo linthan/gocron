@@ -11,7 +11,6 @@ import { ClickOutsideWrapper } from '@/components/grafana/ClickOutsideWrapper/Cl
 export interface Props {
   panel: PanelModel;
   dashboard: DashboardModel;
-  timeInfo: string;
   title?: string;
   description?: string;
   scopedVars?: string;
@@ -48,7 +47,7 @@ export class PanelHeader extends Component<Props, State> {
       'panel-header': true,
       'grid-drag-handle': !isFullscreen,
     });
-    const { panel, dashboard, timeInfo } = this.props;
+    const { panel, dashboard } = this.props;
     return (
       <>
         <div className={panelHeaderClass}>
@@ -68,12 +67,6 @@ export class PanelHeader extends Component<Props, State> {
                 <ClickOutsideWrapper onClick={this.closeMenu}>
                   <PanelHeaderMenu panel={panel} dashboard={dashboard} />
                 </ClickOutsideWrapper>
-              )}
-
-              {timeInfo && (
-                <span className="panel-time-info">
-                  <i className="fa fa-clock-o" /> {timeInfo}
-                </span>
               )}
             </div>
           </div>

@@ -37,6 +37,7 @@
     "bp_logger": "^1.1.1",
     "bp_statemachine": "^1.0.14",
     "classnames": "^2.2.6",
+    "d3": "^5.7.0",
     "dva": "^2.4.0",
     "enquire-js": "^0.2.1",
     "eventemitter3": "^3.1.0",

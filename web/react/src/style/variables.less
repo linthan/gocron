@@ -46,6 +46,11 @@
 @purple: #9954bb;
 @variable: @blue;
 
+@brand-primary: @orange;
+@brand-success: @green;
+@brand-warning: @orange;
+@brand-danger: @red;
+
 @link-color: @gray-1;
 @link-hover-color: darken(@link-color, 20%);
 
@@ -266,3 +271,65 @@
 @side-menu-item-hover-bg: @gray-1;
 @side-menu-shadow: 5px 0px 10px -5px @gray-1;
 @side-menu-link-color: @gray-6;
+
+// Tables
+// -------------------------
+@table-bg: transparent; // overall background-color
+@table-bg-accent: @gray-5; // for striping
+@table-bg-hover: @gray-5; // for hover
+@table-bg-active: @table-bg-hover;
+@table-border: @gray-3; // table and cell border
+
+@table-bg-odd: @gray-6;
+@table-bg-hover: @gray-5;
+
+// popover
+@popover-bg: @page-bg;
+@popover-color: @text-color;
+@popover-border-color: @gray-5;
+@popover-shadow: 0 0 20px @white;
+
+@popover-help-bg: @blue;
+@popover-help-color: @gray-6;
+@popover-error-bg: @btn-danger-bg;
+// Tooltips and popovers
+// -------------------------
+@tooltipColor: @popover-help-color;
+@tooltipBackground: @popover-help-bg;
+@tooltipArrowWidth: 5px;
+@tooltipArrowColor: @tooltipBackground;
+@tooltipLinkColor: lighten(@popover-help-color, 5%);
+@graph-tooltip-bg: @gray-5;
+
+//Buttons
+// -------------------------
+@btn-primary-bg: @brand-primary;
+@btn-primary-bg-hl: lighten(@brand-primary, 8%);
+
+@btn-secondary-bg: @blue;
+@btn-secondary-bg-hl: lighten(@blue, 4%);
+
+@btn-success-bg: lighten(@green, 3%);
+@btn-success-bg-hl: darken(@green, 3%);
+
+@btn-warning-bg: lighten(@orange, 3%);
+@btn-warning-bg-hl: darken(@orange, 3%);
+
+@btn-danger-bg: lighten(@red, 3%);
+@btn-danger-bg-hl: darken(@red, 3%);
+
+@btn-inverse-bg: @gray-6;
+@btn-inverse-bg-hl: darken(@gray-6, 5%);
+@btn-inverse-text-color: @gray-1;
+@btn-inverse-text-shadow: 0 1px 0 rgba(255, 255, 255, 0.4);
+
+@btn-active-bg: @white;
+@btn-active-text-color: @blue;
+
+@btn-link-color: @gray-1;
+
+@btn-divider-left: @gray-4;
+@btn-divider-right: @gray-7;
+@btn-drag-image: '../img/grab_light.svg';
+
+@iconContainerBackground: @white;

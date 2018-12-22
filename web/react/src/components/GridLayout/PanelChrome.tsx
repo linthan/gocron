@@ -1,13 +1,13 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import { AutoSizer } from 'react-virtualized';
-
+// import { Table } from 'antd';
+import { PanelComponent } from '@/components/plugins/graph/module';
 import { PanelHeader } from './PanelHeader/PanelHeader';
-
 import { DashboardModel } from '@/core/dashboard/dashboard_model';
 import { PanelModel } from '@/core/dashboard/panel_model';
-
-import { PanelPlugin } from '@/core/types';
+// import { PanelPlugin } from '@/core/types';
+import { DataPanel } from './DataPanel';
 
 export interface Props {
   panel: PanelModel;
@@ -59,9 +59,10 @@ export class PanelChrome extends PureComponent<Props, State> {
   }
 
   render() {
-    const { panel, dashboard } = this.props;
-    const { timeInfo } = this.state;
-    const { transparent } = panel;
+    const { panel, dashboard, plugin } = this.props;
+    const { refreshCounter, timeRange, timeInfo, renderCounter } = this.state;
+
+    const { datasource, targets, transparent } = panel;
     // const PanelComponent = plugin.exports.Panel;
     const containerClassNames = `panel-container panel-container--absolute ${
       transparent ? 'panel-transparent' : ''
@@ -75,12 +76,25 @@ export class PanelChrome extends PureComponent<Props, State> {
           }
           return (
             <div className={containerClassNames}>
-              <PanelHeader
-                panel={panel}
-                dashboard={dashboard}
-                timeInfo={timeInfo}
-                title={panel.title}
-              />
+              <PanelHeader panel={panel} dashboard={dashboard} title={panel.title} />
+              <DataPanel
+                datasource={datasource}
+                queries={targets}
+                timeRange={timeRange}
+                isVisible={this.isVisible}
+                widthPixels={width}
+                refreshCounter={refreshCounter}
+              >
+                {({ loading, timeSeries }) => {
+                  return (
+                    <div className="panel-content">
+                      <PanelComponent
+                        options={{ showBars: true, showLines: true, showPoints: true }}
+                      />
+                    </div>
+                  );
+                }}
+              </DataPanel>
             </div>
           );
         }}

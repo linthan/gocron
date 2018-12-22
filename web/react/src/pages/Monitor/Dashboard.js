@@ -70,7 +70,15 @@ class Manage extends PureComponent {
       dashboardWrapper: true,
     });
     return (
-      <div className={classWrapper} style={{ flex: 'auto', minHeight: 0 }}>
+      <div
+        className={classWrapper}
+        style={{
+          flex: 'auto',
+          minHeight: 0,
+          display: 'flex',
+          flexDirection: 'column',
+        }}
+      >
         <div className={styles.dashboardNav}>
           <div className={styles.navButtons}>
             <Button
