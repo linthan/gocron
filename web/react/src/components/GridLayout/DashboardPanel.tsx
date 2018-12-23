@@ -92,7 +92,6 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
           isEditing={!!isEditing}
           panel={panel}
           render={(panelHeight: number | 'inherit') => {
-            console.log('--------------', panelHeight);
             return (
               <div
                 className={panelWrapperClass}

@@ -86,6 +86,7 @@
     "eslint-plugin-jsx-a11y": "^6.1.2",
     "eslint-plugin-markdown": "^1.0.0-beta.6",
     "eslint-plugin-react": "^7.11.1",
+    "expose-loader": "^0.7.5",
     "gh-pages": "^2.0.1",
     "husky": "^1.1.2",
     "lint-staged": "^7.2.0",

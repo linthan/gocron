@@ -9,6 +9,16 @@ export default config => {
   const outFile = path.join(__dirname, '../.temp/ant-design-pro.less');
   const stylesDir = path.join(__dirname, '../src/');
 
+  config.module
+    .rule('expose')
+    .test(require.resolve('jquery'))
+    .include.add('src')
+    .end()
+    // Even create named uses (loaders)
+    .use('expose')
+    .loader('expose-loader')
+    .options({ query: '$' });
+
   config.plugin('merge-less').use(MergeLessPlugin, [
     {
       stylesDir,

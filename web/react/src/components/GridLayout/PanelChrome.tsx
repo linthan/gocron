@@ -89,7 +89,7 @@ export class PanelChrome extends PureComponent<Props, State> {
                   return (
                     <div className="panel-content">
                       <PanelComponent
-                        options={{ showBars: true, showLines: true, showPoints: true }}
+                        options={{ showBars: false, showLines: true, showPoints: false }}
                       />
                     </div>
                   );

@@ -104,4 +104,7 @@ export default {
   cssnano: {
     mergeRules: false,
   },
+  externals: {
+    jquery: 'jQuery',
+  },
 };

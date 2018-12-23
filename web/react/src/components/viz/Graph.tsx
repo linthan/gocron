@@ -1,9 +1,9 @@
 // Libraries
+import jQuery from 'jquery';
 import React, { PureComponent } from 'react';
 import { withSize } from 'react-sizeme';
-import * as d3 from 'd3';
-// import '../../vendor/flot/jquery.flot';
-// import '../../vendor/flot/jquery.flot.time';
+import '../../vendor/flot/jquery.flot';
+import '../../vendor/flot/jquery.flot.time';
 
 // Types
 import { TimeRange, TimeSeriesVMs } from '@/core/types';
@@ -18,11 +18,7 @@ interface GraphProps {
 }
 
 export class Graph extends PureComponent<GraphProps> {
-  static defaultProps = {
-    showLines: true,
-    showPoints: false,
-    showBars: false,
-  };
+  static defaultProps = { showLines: true, showPoints: false, showBars: false };
 
   element: any;
 
@@ -42,63 +38,65 @@ export class Graph extends PureComponent<GraphProps> {
 
   draw() {
     const { size, timeSeries, timeRange, showLines, showBars, showPoints } = this.props;
-
     if (!size) {
       return;
     }
-    const data = [
-      { letter: 'a', name: 'a', frequemcy: 1, value: 1 },
-      { letter: 'b', name: 'b', frequemcy: 2, value: 2 },
-      { letter: 'c', name: 'c', frequemcy: 3, value: 3 },
-    ];
-    const margin = { top: 20, right: 0, bottom: 30, left: 40 };
-    const y = d3
-      .scaleLinear()
-      .domain([0, d3.max(data, d => d.value)])
-      .nice()
-      .range([size.height - margin.bottom, margin.top]);
-    const x = d3
-      .scaleBand()
-      .domain(data.map(d => d.name))
-      .range([margin.left, size.width - margin.right])
-      .padding(0.1);
-    const yAxis = g =>
-      g
-        .attr('transform', `translate(${margin.left},0)`)
-        .call(d3.axisLeft(y))
-        .call(g => g.select('.domain').remove());
-    const xAxis = g =>
-      g
-        .attr('transform', `translate(0,${size.height - margin.bottom})`)
-        .call(d3.axisBottom(x).tickSizeOuter(0));
-    d3.select(this.element)
-      .selectAll('*')
-      .remove();
-    const svg = d3.select(this.element);
-    svg
-      .append('g')
-      .attr('fill', 'steelblue')
-      .selectAll('rect')
-      .data(data)
-      .enter()
-      .append('rect')
-      .attr('x', d => x(d.name))
-      .attr('y', d => y(d.value))
-      .attr('height', d => y(0) - y(d.value))
-      .attr('width', x.bandwidth());
+    const ticks = size.width / 100;
+    const min = 1545513141280;
+    const max = 1545534711280;
 
-    svg.append('g').call(xAxis);
+    const flotOptions = {
+      legend: { show: false },
+      series: {
+        lines: { show: showLines, linewidth: 1, zero: false },
+        points: { show: showPoints, fill: 1, fillColor: false, radius: 2 },
+        bars: { show: showBars, fill: 1, barWidth: 1, zero: false, lineWidth: 0 },
+        shadowSize: 0,
+      },
+      xaxis: {
+        mode: 'time',
+        min: min,
+        max: max,
+        label: 'Datetime',
+        ticks: ticks,
+        timeformat: time_format(ticks, min, max),
+      },
+      grid: {
+        minBorderMargin: 0,
+        markings: [],
+        backgroundColor: null,
+        borderWidth: 0, // hoverable: true,
+        clickable: true,
+        color: '#a1a1a1',
+        margin: { left: 0, right: 0 },
+        labelMarginX: 0,
+      },
+    };
 
-    svg.append('g').call(yAxis);
+    try {
+      console.log('Graph render');
+      jQuery.plot(
+        this.element,
+
+        [
+          { label: 'Foo', data: [[10, 1], [17, -14], [30, 5]] },
+          { label: 'Bar', data: [[11, 13], [19, 11], [30, -7]] },
+        ],
+        {
+          grid: {
+            borderWidth: 0, // hoverable: true,
+          },
+        }
+      );
+    } catch (err) {
+      console.log('Graph rendering error', err, flotOptions, timeSeries);
+    }
   }
 
   render() {
-    const { size } = this.props;
     return (
       <div className="graph-panel">
-        <div className="graph-panel__chart">
-          <svg width={size.width} height={size.height} ref={e => (this.element = e)} />
-        </div>
+        <div ref={e => (this.element = e)} className="graph-panel__chart" />
       </div>
     );
   }
