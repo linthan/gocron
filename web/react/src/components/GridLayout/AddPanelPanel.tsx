@@ -52,7 +52,9 @@ export class AddPanelPanel extends React.Component<AddPanelPanelProps, any> {
 
   panelSizeChanged() {
     setTimeout(() => {
-      this.scrollbar.update();
+      if (this.scrollbar) {
+        this.scrollbar.update();
+      }
     });
   }
   handleCloseAddPanel(evt) {

@@ -8,6 +8,7 @@ import { AddPanelPanel } from './AddPanelPanel';
 import { PanelChrome } from './PanelChrome';
 import { AngularComponent } from './AngularLoader';
 import { PanelResizer } from './PanelResizer';
+import { PanelEditor } from './PanelEditor';
 
 // tslint:disable-next-line:interface-name
 export interface DashboardPanelProps {
@@ -67,7 +68,7 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
 
   public render() {
     const { panel, dashboard, isFullscreen, isEditing } = this.props;
-    // const { plugin, angularPanel } = this.state;
+    const { hover } = this.state;
     if (this.isSpecial()) {
       return this.specialPanels[this.props.panel.type]();
     }
@@ -79,6 +80,7 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
     const containerClass = classNames({
       'panel-editor-container': isEditing,
       'panel-height-helper': !isEditing,
+      'panel-hover-highlight': hover,
     });
     const panelWrapperClass = classNames({
       'panel-wrapper': true,
@@ -87,15 +89,22 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
     });
 
     return (
-      <div className={containerClass}>
+      <div
+        onMouseEnter={() => {
+          this.setState({ hover: true });
+        }}
+        onMouseLeave={() => {
+          this.setState({ hover: false });
+        }}
+        className={containerClass}
+      >
         <PanelResizer
           isEditing={!!isEditing}
           panel={panel}
           render={(panelHeight: number | 'inherit') => {
             return (
               <div
-                className={panelWrapperClass}
-                // onMouseEnter={this.onMouseEnter}
+                className={panelWrapperClass} // onMouseEnter={this.onMouseEnter}
                 // onMouseLeave={this.onMouseLeave}
                 style={{ height: panelHeight }}
               >
@@ -104,6 +113,7 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
             );
           }}
         />
+        <PanelEditor />
       </div>
     );
   }
