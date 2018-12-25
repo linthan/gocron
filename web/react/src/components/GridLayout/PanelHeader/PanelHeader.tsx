@@ -22,10 +22,23 @@ interface State {
 }
 
 export class PanelHeader extends Component<Props, State> {
+  constructor(props) {
+    super(props);
+  }
   state = {
     panelMenuOpen: false,
   };
 
+  updateComponent = () => {
+    this.forceUpdate();
+  };
+
+  componentDidMount() {
+    this.props.panel.events.on('panel-config-changed', this.updateComponent);
+  }
+  componentWillUnmount() {
+    this.props.panel.events.off('panel-config-changed', this.updateComponent);
+  }
   onMenuToggle = event => {
     event.stopPropagation();
 

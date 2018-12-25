@@ -126,12 +126,10 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public onLayoutChange(newLayout) {
-    if (!this.dashboard.meta.fullscreen) {
-      for (const newPos of newLayout) {
-        this.panelMap[newPos.i].updateGridPos(newPos);
-      }
-      this.dashboard.sortPanelsByGridPos();
+    for (const newPos of newLayout) {
+      this.panelMap[newPos.i].updateGridPos(newPos);
     }
+    this.dashboard.sortPanelsByGridPos();
   }
 
   public triggerForceUpdate() {
@@ -145,9 +143,7 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public updateGridPos(item, layout) {
-    if (!this.dashboard.meta.fullscreen) {
-      this.panelMap[item.i].updateGridPos(item);
-    }
+    this.panelMap[item.i].updateGridPos(item);
 
     // react-grid-layout has a bug (#670), and onLayoutChange() is only called when the component is mounted.
     // So it's required to call it explicitly when panel resized or moved to save layout changes.
@@ -155,31 +151,19 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
   }
 
   public onResize(layout, oldItem, newItem) {
-    if (!this.dashboard.meta.fullscreen) {
-      this.panelMap[newItem.i].updateGridPos(newItem);
-    }
+    this.panelMap[newItem.i].updateGridPos(newItem);
   }
 
   public onResizeStop(layout, oldItem, newItem) {
-    if (!this.dashboard.meta.fullscreen) {
-      this.updateGridPos(newItem, layout);
-      this.panelMap[newItem.i].resizeDone();
-    }
+    this.updateGridPos(newItem, layout);
+    this.panelMap[newItem.i].resizeDone();
   }
 
   public onDragStop(layout, oldItem, newItem) {
-    if (!this.dashboard.meta.fullscreen) {
-      this.updateGridPos(newItem, layout);
-    }
+    this.updateGridPos(newItem, layout);
   }
 
-  public componentDidMount() {
-    setTimeout(() => {
-      this.setState(() => {
-        return { animated: true };
-      });
-    });
-  }
+  public componentDidMount() {}
 
   public renderPanels() {
     const panelElements = [];
@@ -207,7 +191,6 @@ export class DashboardGrid extends React.Component<DashboardGridProps, any> {
       <SizedReactLayoutGrid
         className={classNames({
           layout: true,
-          animated: this.state.animated,
         })}
         layout={this.buildLayout()}
         isResizable={!this.dashboard.meta.fullscreen}

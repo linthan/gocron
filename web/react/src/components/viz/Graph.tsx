@@ -55,13 +55,7 @@ export class Graph extends PureComponent<GraphProps> {
   element: any;
 
   componentDidUpdate(prevProps: GraphProps) {
-    if (
-      prevProps.timeSeries !== this.props.timeSeries ||
-      prevProps.timeRange !== this.props.timeRange ||
-      prevProps.size !== this.props.size
-    ) {
-      this.draw();
-    }
+    this.draw();
   }
 
   componentDidMount() {

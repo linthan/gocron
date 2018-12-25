@@ -113,7 +113,7 @@ export class DashboardPanel extends PureComponent<DashboardPanelProps, any> {
             );
           }}
         />
-        <PanelEditor />
+        {panel.isEditing && <PanelEditor panel={panel} dashboard={dashboard} />}
       </div>
     );
   }
