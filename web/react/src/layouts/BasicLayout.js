@@ -176,7 +176,7 @@ class BasicLayout extends React.PureComponent {
   }
 
   judgePermission(permissionNeeded, ownPermission, userInfo) {
-    if (userInfo.is_admin) {
+    if (userInfo && userInfo.is_admin) {
       return true;
     }
     if (!ownPermission) {
