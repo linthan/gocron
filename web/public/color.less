@@ -1673,6 +1673,7 @@ this.tinycolor = tinycolor;
 @checkbox-size          : 16px;
 @checkbox-color         : @primary-color;
 @checkbox-check-color   : #fff;
+@checkbox-border-width  : @border-width-base;
 
 // Radio
 @radio-size             : 16px;
@@ -1834,7 +1835,8 @@ this.tinycolor = tinycolor;
 @menu-inline-toplevel-item-height: 40px;
 @menu-item-height: 40px;
 @menu-collapsed-width: 80px;
-@menu-bg: transparent;
+@menu-bg: @component-background;
+@menu-popup-bg: @component-background;
 @menu-item-color: @text-color;
 @menu-highlight-color: @primary-color;
 @menu-item-active-bg: @item-active-bg;
@@ -2395,6 +2397,532 @@ i.trigger:hover {
 .trendItem.reverseColor .down {
   color: #f5222d;
 }
+
+.gicon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.gicon-add-annotation {
+  background-image: red;
+}
+.gicon-add-panel {
+  background-image: red;
+}
+.dashboard-row--collapsed {
+  background: #fff;
+}
+.dashboard-row__title {
+  color: #52545c;
+}
+.dashboard-row__title .fa {
+  color: #767980;
+}
+.dashboard-row__actions {
+  color: #767980;
+}
+.dashboard-row__actions a {
+  color: #767980;
+}
+.dashboard-row__actions a:hover {
+  color: #222326;
+}
+.dashboard-row__panel_count {
+  color: #767980;
+}
+.dashboard-row__drag {
+  background: red 50% 50%;
+  background-size: 8px;
+}
+.ps--active-x > .ps__rail-x,
+.ps--active-y > .ps__rail-y {
+  background-color: transparent;
+}
+.ps__rail-x:hover,
+.ps__rail-y:hover,
+.ps__rail-x:focus,
+.ps__rail-y:focus {
+  background-color: transparent;
+}
+.ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+}
+.ps__thumb-y {
+  border-radius: 6px;
+}
+.ps__rail-x:hover,
+.ps__rail-y:hover,
+.ps__rail-x:focus,
+.ps__rail-y:focus {
+  background-color: transparent;
+}
+::-webkit-scrollbar-button:horizontal:decrement:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:horizontal:increment:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:vertical:decrement:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:vertical:increment:active {
+  background-image: none;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dde4ed), color-stop(100%, #dde4ed));
+  border: 1px solid #c7d0d9;
+  border-top: 1px solid #c7d0d9;
+  border-left: 1px solid #c7d0d9;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dde4ed), color-stop(100%, #dde4ed));
+  border: 1px solid #c7d0d9;
+  border-top: 1px solid #c7d0d9;
+  border-left: 1px solid #c7d0d9;
+}
+.baron__scroller {
+  border: 0;
+}
+.baron__bar {
+  background: #999;
+}
+.baron._scrollbar .baron__bar {
+  border-radius: 6px;
+}
+.custom-scrollbars .track-vertical {
+  border-radius: 3px;
+}
+.custom-scrollbars .track-horizontal {
+  border-radius: 3px;
+}
+.custom-scrollbars .thumb-vertical {
+  border-radius: 6px;
+}
+.custom-scrollbars .thumb-horizontal {
+  border-radius: 6px;
+}
+.add-panel__header {
+  background: linear-gradient(90deg, #fff, #f7f8fa);
+  box-shadow: inset 0px -3px 10px #e9edf2;
+  border-bottom: 1px solid #c7d0d9;
+}
+.add-panel__close {
+  background-color: transparent;
+  border: 0;
+}
+.add-panel__sub-title {
+  color: #767980;
+}
+.add-panel__item {
+  background: linear-gradient(135deg, #e9edf2, #dde4ed);
+  box-shadow: -1px -1px 0 0 rgba(255, 255, 255, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+  border-radius: 3px;
+}
+.add-panel__item.active,
+.add-panel__item:hover {
+  background: linear-gradient(135deg, #dde4ed, #e9edf2);
+}
+.add-panel__no-panels {
+  color: #767980;
+}
+.gf-tabs-link {
+  border: solid transparent;
+  border-width: 0 1px 1px;
+  border-radius: 3px 3px 0 0;
+  color: #52545c;
+}
+.gf-tabs-link:hover,
+.gf-tabs-link:focus {
+  color: #222326;
+}
+.gf-tabs-link.active,
+.gf-tabs-link.active:hover,
+.gf-tabs-link.active:focus {
+  border-color: #ff7941 #dde4ed transparent;
+  background: #f7f8fa;
+  color: #52545c;
+}
+.gf-tabs-link.active::before,
+.gf-tabs-link.active:hover::before,
+.gf-tabs-link.active:focus::before {
+  background-image: linear-gradient(to right, #ffd500 0%, #ff4400 99%, #ff4400 100%);
+}
+.gf-tabs-link.active--panel {
+  background: #fff !important;
+}
+.gf-form--has-input-icon .gf-form-input-icon {
+  color: #c7d0d9;
+}
+.gf-form--has-input-icon > input:focus + .gf-form-input-icon {
+  color: #767980;
+}
+.gf-form-disabled {
+  color: #767980;
+}
+.gf-form-disabled .gf-form-select-wrapper::after {
+  color: #767980;
+}
+.gf-form-disabled a,
+.gf-form-disabled .gf-form-input {
+  color: #767980;
+}
+.gf-form-label {
+  background-color: #dde4ed;
+  border: 1px solid #dde4ed;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.gf-form-label--error {
+  color: #ec2128;
+}
+.gf-form-label:disabled {
+  color: #767980;
+}
+.gf-form-input {
+  color: #303133;
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #dde4ed;
+  border-radius: 0 4px 4px 0;
+}
+.gf-form-input::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+.gf-form-input::placeholder {
+  color: #c7d0d9;
+}
+.gf-form-input:disabled,
+.gf-form-input[readonly] {
+  background-color: #dde4ed;
+}
+.gf-form-input--dropdown::after {
+  background-color: transparent;
+  color: #52545c;
+}
+.gf-form-select-wrapper {
+  background-color: #fff;
+}
+.gf-form-select-wrapper .gf-form-select-icon + .gf-form-input {
+  background-color: transparent;
+}
+.gf-form-select-wrapper .gf-form-select-icon + .gf-form-input option {
+  color: #000;
+}
+.gf-form-select-wrapper select.gf-form-input:-moz-focusring {
+  color: transparent;
+}
+.gf-form-select-wrapper select.gf-form-input.ng-empty {
+  color: #767980;
+}
+.gf-form-select-wrapper::after {
+  background-color: transparent;
+  color: #52545c;
+}
+.gf-form-dropdown-typeahead {
+  background-color: #fff;
+  border: 1px solid #dde4ed;
+  border-radius: 0 4px 4px 0;
+}
+.gf-form-dropdown-typeahead::after {
+  background-color: transparent;
+  color: #303133;
+}
+.gf-form-dropdown-typeahead .gf-form-input {
+  border: none;
+}
+.gf-form-help-icon {
+  color: #767980;
+}
+.gf-form-help-icon--bold {
+  color: #41444b;
+}
+.gf-form-icon--right-absolute {
+  color: #767980;
+}
+.cta-form {
+  background-color: #212327;
+  border-top: 3px solid #3aa655;
+}
+.dropdown-desc {
+  color: #767980;
+}
+.caret {
+  border-top: 4px solid #767980;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid #c7d0d9;
+}
+.dropdown-menu .divider {
+  background-color: #e9edf2;
+  border-bottom: 1px solid #fff;
+}
+.dropdown-menu > li > a {
+  color: #303133;
+}
+.dropdown-menu > li > a i {
+  color: #9ea0a9;
+}
+.dropdown-menu--menu,
+.dropdown-menu--navbar,
+.dropdown-menu--sidemenu {
+  background: #f7f8fa;
+  box-shadow: 5px 5px 10px -5px #52545c;
+  border: none;
+}
+.dropdown-menu--menu > li > a,
+.dropdown-menu--navbar > li > a,
+.dropdown-menu--sidemenu > li > a {
+  border-left: 2px solid transparent;
+}
+.dropdown-menu--menu > li > a:hover,
+.dropdown-menu--navbar > li > a:hover,
+.dropdown-menu--sidemenu > li > a:hover {
+  color: #222326;
+  background: #e9edf2 !important;
+}
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus,
+.dropdown-submenu:hover > a,
+.dropdown-submenu:focus > a {
+  color: #52545c;
+  background-color: #e9edf2;
+}
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a:hover,
+.dropdown-menu > .active > a:focus {
+  color: #52545c;
+  background-color: #e9edf2;
+}
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  color: #767980;
+}
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+  background-color: transparent;
+  background-image: none;
+}
+.dropup .caret,
+.navbar-fixed-bottom .dropdown .caret {
+  border-top: 0;
+  border-bottom: 4px solid #000;
+}
+.dropdown-submenu > a::after {
+  background-color: transparent;
+  color: #767980;
+}
+.dropdown-submenu:hover > a::after {
+  border-left-color: #52545c;
+}
+.dropdown-menu-item-shortcut {
+  color: #767980;
+}
+.dropdown-menu.dropdown-menu--new li a {
+  border-left: 2px solid #1e2028;
+  background: #1e2028;
+}
+.dropdown-menu.dropdown-menu--new li a:hover {
+  color: #222326;
+  background: #dde4ed;
+}
+.graph-legend-table .graph-legend-series--right-y .graph-legend-alias::after {
+  color: #767980;
+}
+.graph-legend-table .graph-legend-series:nth-child(odd) {
+  background: #dde4ed;
+}
+.graph-legend-table th {
+  color: #0083b3;
+}
+.graph-legend-series-hidden .graph-legend-value,
+.graph-legend-series-hidden .graph-legend-alias {
+  color: #9ea0a9;
+}
+.annotation-tags {
+  color: #9954bb;
+}
+.graph-tooltip {
+  background-color: #dde4ed;
+  color: #52545c;
+}
+.graph-tooltip .graph-tooltip-time {
+  color: #52545c;
+}
+.graph-tooltip .graph-tooltip-list-item--highlight {
+  color: #41444b;
+}
+.graph-annotation .graph-annotation__header {
+  background-color: #dde4ed;
+}
+.graph-annotation .graph-annotation__time {
+  color: #767980;
+}
+.graph-annotation .graph-annotation__user img {
+  border-radius: 50%;
+}
+.graph-annotation a[href] {
+  color: #0083b3;
+}
+.axisLabel {
+  color: #52545c;
+}
+.alert-handle-wrapper .alert-handle {
+  box-shadow: -1px -1px 0 0 rgba(255, 255, 255, 0.1), 1px 1px 0 0 rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, #e9edf2, #dde4ed);
+  border-radius: 4px;
+  color: #767980;
+}
+.alert-handle-wrapper .alert-handle:hover {
+  background-color: #d9e0e9;
+}
+.alert-handle-wrapper .alert-handle .icon-gf {
+  border-right: 1px solid #c7d0d9;
+}
+.alert-handle-wrapper .alert-handle-value {
+  border-left: 1px solid #f7f8fa;
+}
+.alert-handle-wrapper .alert-handle-value .alert-handle-grip {
+  background: red 50% 50%;
+  background-size: 8px;
+}
+.alert-handle-wrapper .alert-handle-line--critical {
+  background-color: rgba(237, 46, 24, 0.6);
+}
+.alert-handle-wrapper .alert-handle-line--warning {
+  background-color: rgba(247, 149, 32, 0.6);
+}
+.panel-editor__right {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 8px #acb6bf;
+}
+.panel-editor__close {
+  border-radius: 50%;
+}
+.panel-editor-resizer__handle {
+  background: #c7d0d9;
+  border-radius: 3px;
+}
+.panel-editor-resizer__handle::before {
+  border-top: 2px dotted #acb6bf;
+}
+.panel-editor-resizer__handle:hover::before {
+  border-color: #767980;
+}
+.viz-picker__item {
+  background: #fff;
+  border: 1px solid #acb6bf;
+  border-radius: 3px;
+}
+.viz-picker__item--current {
+  box-shadow: 0 0 6px #ff7941;
+  border: 1px solid #ff7941;
+}
+.viz-picker__item:hover {
+  box-shadow: 0 0 4px #00a8e6;
+  background: #f0fbff;
+  border: 1px solid #00a8e6;
+}
+.panel-editor-tabs::before {
+  background: #41444b;
+}
+.panel-option-section {
+  border: 1px solid #e9edf2;
+  border-radius: 4px;
+}
+.panel-option-section__header {
+  background: linear-gradient(0deg, #e9edf2, #f7f8fa);
+}
+.panel-option-section__body {
+  background: #f7f8fa;
+}
+.template-variable {
+  color: #0083b3;
+}
+div.flot-text {
+  color: #52545c !important;
+}
+.panel-solo .panel-container {
+  border: none;
+}
+.panel-container {
+  background-color: #fff;
+  border: solid 1px #dde4ed;
+  border-radius: 3px;
+}
+.panel-container.panel-transparent {
+  background-color: transparent;
+  border: none;
+}
+.panel-title {
+  border: 0px;
+}
+.panel-title-text:hover {
+  color: #222326;
+}
+.panel-menu-toggle {
+  color: #767980;
+}
+.panel-menu-toggle:hover {
+  color: #222326;
+}
+.panel-loading {
+  color: #767980;
+}
+.panel-empty p {
+  color: #767980;
+}
+.panel-header:hover {
+  background-color: #e9edf2;
+}
+.panel-info-corner {
+  color: #767980;
+}
+.panel-info-corner--error {
+  color: #52545c;
+}
+.panel-time-info {
+  color: #0083b3;
+}
+.react-grid-item.react-grid-placeholder {
+  background: red;
+}
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+.react-resizable-handle {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+}
+.dashboardWrapper {
+  background-color: #f7f8fa;
+}
+.panel-header:hover {
+  background-color: #35373f;
+}
+.panel-title {
+  border: 0px;
+}
+.panel-title-text:hover {
+  color: #222326;
+}
+.panel-in-fullscreen .panel-header:hover {
+  background-color: inherit;
+}
 .container {
   background: #f0f2f5;
 }
@@ -2435,6 +2963,31 @@ i.trigger:hover {
 }
 .main .icon:hover {
   color: @primary-color;
+}
+
+.gicon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.gicon-add-annotation {
+  background-image: red;
+}
+.gicon-add-panel {
+  background-image: red;
+}
+.react-grid-item.react-grid-placeholder {
+  background: red;
+}
+.react-grid-item > .react-resizable-handle::after {
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+.react-resizable-handle {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
 }
 html {
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
@@ -3366,16 +3919,6 @@ mark {
 .ant-btn-background-ghost.ant-btn-danger.disabled.active > a:only-child:after,
 .ant-btn-background-ghost.ant-btn-danger[disabled].active > a:only-child:after {
   background: transparent;
-}
-.christmas.ant-btn-primary:before {
-  background: url(data:image/png;base64,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) no-repeat 50% 0;
-  background-size: 64px;
-}
-.christmas.ant-btn-primary.ant-btn-lg:before {
-  background-size: 72px;
-}
-.christmas.ant-btn-primary.ant-btn-sm:before {
-  background-size: 56px;
 }
 .ant-fullcalendar {
   color: rgba(0, 0, 0, 0.65);
@@ -5193,7 +5736,7 @@ form .ant-upload {
 .ant-menu {
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
   color: rgba(0, 0, 0, 0.65);
-  background: transparent;
+  background: #fff;
 }
 .ant-menu-item-group-title {
   color: rgba(0, 0, 0, 0.45);
@@ -5264,9 +5807,10 @@ form .ant-upload {
 }
 .ant-menu-submenu-popup {
   border-radius: 4px;
+  background: #fff;
 }
 .ant-menu-submenu > .ant-menu {
-  background-color: transparent;
+  background-color: #fff;
   border-radius: 4px;
 }
 .ant-menu-submenu-vertical > .ant-menu-submenu-title .ant-menu-submenu-arrow:before,
@@ -7964,6 +8508,9 @@ i.antd-pro-github.com-linthan-gocron-web-react-src-components-global-header-inde
 .antd-pro-github.com-linthan-gocron-web-react-src-pages-exception-style-trigger {
   background: 'red';
 }
+.antd-pro-github.com-linthan-gocron-web-react-src-pages-monitor-dashboard-dashboardNav {
+  border-bottom: 1px solid transparent;
+}
 .antd-pro-github.com-linthan-gocron-web-react-src-pages-setting-pms-manageMenu .antd-pro-github.com-linthan-gocron-web-react-src-pages-setting-pms-menuTree {
   border: 1px solid #e9e9e9;
 }
@@ -7995,5 +8542,530 @@ i.antd-pro-github.com-linthan-gocron-web-react-src-components-global-header-inde
 }
 .antd-pro-github.com-linthan-gocron-web-react-src-pages-user-login-main .antd-pro-github.com-linthan-gocron-web-react-src-pages-user-login-icon:hover {
   color: @primary-color;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-base-icon-gicon {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-base-icon-gicon-add-annotation {
+  background-image: red;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-base-icon-gicon-add-panel {
+  background-image: red;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-desc {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-caret {
+  border-top: 4px solid #767980;
+  border-right: 4px solid transparent;
+  border-left: 4px solid transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu {
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-divider {
+  background-color: #e9edf2;
+  border-bottom: 1px solid #fff;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > li > a {
+  color: #303133;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > li > a i {
+  color: #b1daff;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--menu,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--navbar,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--sidemenu {
+  background: #f7f8fa;
+  box-shadow: 5px 5px 10px -5px #52545c;
+  border: none;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--menu > li > a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--navbar > li > a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--sidemenu > li > a {
+  border-left: 2px solid transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--menu > li > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--navbar > li > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--sidemenu > li > a:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+  background: #e9edf2 !important;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > li > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > li > a:focus,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-submenu:hover > a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-submenu:focus > a {
+  color: @primary-color;
+  background-color: #e9edf2;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-active > a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-active > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-active > a:focus {
+  color: @primary-color;
+  background-color: #e9edf2;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-disabled > a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-disabled > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-disabled > a:focus {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-disabled > a:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-disabled > a:focus {
+  background-color: transparent;
+  background-image: none;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropup .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-caret,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-navbar-fixed-bottom .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown .antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-caret {
+  border-top: 0;
+  border-bottom: 4px solid #000;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-submenu > a::after {
+  background-color: transparent;
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-submenu:hover > a::after {
+  border-left-color: @primary-color;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu-item-shortcut {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--new li a {
+  border-left: 2px solid #1e2028;
+  background: #1e2028;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu.antd-pro-github.com-linthan-gocron-web-react-src-style-components-dropdown-dropdown-menu--new li a:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+  background: #dde4ed;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form--has-input-icon .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input-icon {
+  color: #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form--has-input-icon > input:focus + .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input-icon {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-disabled {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-disabled .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper::after {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-disabled a,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-disabled .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-label {
+  background-color: #dde4ed;
+  border: 1px solid #dde4ed;
+  border-right: none;
+  border-radius: 4px 0 0 4px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-label--error {
+  color: #ec2128;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-label:disabled {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input {
+  color: rgba(0, 0, 0, 0.65);
+  background-color: #fff;
+  background-image: none;
+  background-clip: padding-box;
+  border: 1px solid #d9d9d9;
+  border-radius: 0 4px 4px 0;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input::-ms-expand {
+  background-color: transparent;
+  border: 0;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input::placeholder {
+  color: #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input:disabled,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input[readonly] {
+  background-color: #dde4ed;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input--dropdown::after {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper {
+  background-color: #fff;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-icon + .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input {
+  background-color: transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-icon + .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input option {
+  color: #000;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper select.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input:-moz-focusring {
+  color: transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper select.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-ng-empty {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-select-wrapper::after {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-dropdown-typeahead {
+  background-color: #fff;
+  border: 1px solid #d9d9d9;
+  border-radius: 0 4px 4px 0;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-dropdown-typeahead::after {
+  background-color: transparent;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-dropdown-typeahead .antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-input {
+  border: none;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-help-icon {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-help-icon--bold {
+  color: #41444b;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-gf-form-icon--right-absolute {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-gf-form-cta-form {
+  background-color: #212327;
+  border-top: 3px solid #3aa655;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__header {
+  background: linear-gradient(90deg, #fff, #f7f8fa);
+  box-shadow: inset 0px -3px 10px #e9edf2;
+  border-bottom: 1px solid #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__close {
+  background-color: transparent;
+  border: 0;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__sub-title {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__item {
+  background: linear-gradient(135deg, #e9edf2, #dde4ed);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__item.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-active,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__item:hover {
+  background: linear-gradient(135deg, #dde4ed, #e9edf2);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_add_panel-add-panel__no-panels {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor__right {
+  background: #fff;
+  border-radius: 3px;
+  box-shadow: 0px 0px 8px #acb6bf;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor__close {
+  border-radius: 50%;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor-resizer__handle {
+  background: #c7d0d9;
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor-resizer__handle::before {
+  border-top: 2px dotted #acb6bf;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor-resizer__handle:hover::before {
+  border-color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-viz-picker__item {
+  background: #fff;
+  border: 1px solid #acb6bf;
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-viz-picker__item--current {
+  box-shadow: 0 0 6px #ff7941;
+  border: 1px solid #ff7941;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-viz-picker__item:hover {
+  box-shadow: 0 0 4px #00a8e6;
+  background: #f0fbff;
+  border: 1px solid #00a8e6;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-editor-tabs::before {
+  background: #41444b;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-option-section {
+  border: 1px solid #e9edf2;
+  border-radius: 4px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-option-section__header {
+  background: linear-gradient(0deg, #e9edf2, #f7f8fa);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_editor-panel-option-section__body {
+  background: #f7f8fa;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-table .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-series--right-y .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-alias::after {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-table .graph-legend-series:nth-child(odd) {
+  background: #dde4ed;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-table th {
+  color: #0083b3;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-series-hidden .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-value,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-series-hidden .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-legend-alias {
+  color: #b1daff;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-annotation-tags {
+  color: #9954bb;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-tooltip {
+  background-color: #dde4ed;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-tooltip .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-tooltip-time {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-tooltip .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-tooltip-list-item--highlight {
+  color: #41444b;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation__header {
+  background-color: #dde4ed;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation__time {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation__user img {
+  border-radius: 50%;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-graph-annotation a[href] {
+  color: #0083b3;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-axisLabel {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.09);
+  background: linear-gradient(135deg, #e9edf2, #dde4ed);
+  border-radius: 4px;
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle:hover {
+  background-color: #d9e0e9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-icon-gf {
+  border-right: 1px solid #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-value {
+  border-left: 1px solid #f7f8fa;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-value .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-grip {
+  background: red 50% 50%;
+  background-size: 8px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-line--critical {
+  background-color: rgba(237, 46, 24, 0.6);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-wrapper .antd-pro-github.com-linthan-gocron-web-react-src-style-components-panel_graph-alert-handle-line--warning {
+  background-color: rgba(247, 149, 32, 0.6);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row--collapsed {
+  background: #fff;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__title {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__title .antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-fa {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__actions {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__actions a {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__actions a:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__panel_count {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-row-dashboard-row__drag {
+  background: red 50% 50%;
+  background-size: 8px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps--active-x > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-x,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps--active-y > .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-y {
+  background-color: transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-x:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-y:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-x:focus,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-y:focus {
+  background-color: transparent;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__thumb-x {
+  background-color: #aaa;
+  border-radius: 6px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__thumb-y {
+  border-radius: 6px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-x:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-y:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-x:focus,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-ps__rail-y:focus {
+  background-color: transparent;
+}
+::-webkit-scrollbar-button:horizontal:decrement:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:horizontal:increment:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:vertical:decrement:active {
+  background-image: none;
+}
+::-webkit-scrollbar-button:vertical:increment:active {
+  background-image: none;
+}
+::-webkit-scrollbar-track-piece {
+  background-color: transparent;
+}
+::-webkit-scrollbar-thumb:vertical {
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #dde4ed), color-stop(100%, #dde4ed));
+  border: 1px solid #c7d0d9;
+  border-top: 1px solid #c7d0d9;
+  border-left: 1px solid #c7d0d9;
+}
+::-webkit-scrollbar-thumb:horizontal {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #dde4ed), color-stop(100%, #dde4ed));
+  border: 1px solid #c7d0d9;
+  border-top: 1px solid #c7d0d9;
+  border-left: 1px solid #c7d0d9;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-baron__scroller {
+  border: 0;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-baron__bar {
+  background: #999;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-baron.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-_scrollbar .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-baron__bar {
+  border-radius: 6px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-custom-scrollbars .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-track-vertical {
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-custom-scrollbars .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-track-horizontal {
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-custom-scrollbars .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-thumb-vertical {
+  border-radius: 6px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-custom-scrollbars .antd-pro-github.com-linthan-gocron-web-react-src-style-components-scrollbar-thumb-horizontal {
+  border-radius: 6px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link {
+  border: solid transparent;
+  border-width: 0 1px 1px;
+  border-radius: 3px 3px 0 0;
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link:focus {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active:hover,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active:focus {
+  border-color: #ff7941 #dde4ed transparent;
+  background: #f7f8fa;
+  color: @primary-color;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active::before,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active:hover::before,
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active:focus::before {
+  background-image: linear-gradient(to right, #ffd500 0%, #ff4400 99%, #ff4400 100%);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-gf-tabs-link.antd-pro-github.com-linthan-gocron-web-react-src-style-components-tabs-active--panel {
+  background: #fff !important;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-dashboardWrapper {
+  background-color: #f7f8fa;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-panel-header:hover {
+  background-color: #35373f;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-panel-title {
+  border: 0px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-panel-title-text:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-panel-in-fullscreen .antd-pro-github.com-linthan-gocron-web-react-src-style-grid-layout-index-panel-header:hover {
+  background-color: inherit;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-template-variable {
+  color: #0083b3;
+}
+div.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-flot-text {
+  color: rgba(0, 0, 0, 0.65) !important;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-solo .antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-container {
+  border: none;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-container {
+  background-color: #fff;
+  border: solid 1px #dde4ed;
+  border-radius: 3px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-container.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-transparent {
+  background-color: transparent;
+  border: none;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-title {
+  border: 0px;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-title-text:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-menu-toggle {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-menu-toggle:hover {
+  color: color(~`colorPalette("@{primary-color}", 5)`);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-loading {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-empty p {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-header:hover {
+  background-color: #e9edf2;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-info-corner {
+  color: #767980;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-info-corner--error {
+  color: rgba(0, 0, 0, 0.65);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-pages-dashboard-panel-time-info {
+  color: #0083b3;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-react-grid-layout-styles-react-grid-item.antd-pro-github.com-linthan-gocron-web-react-src-style-react-grid-layout-styles-react-grid-placeholder {
+  background: red;
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-react-grid-layout-styles-react-grid-item > .antd-pro-github.com-linthan-gocron-web-react-src-style-react-grid-layout-styles-react-resizable-handle::after {
+  border-right: 2px solid rgba(0, 0, 0, 0.4);
+  border-bottom: 2px solid rgba(0, 0, 0, 0.4);
+}
+.antd-pro-github.com-linthan-gocron-web-react-src-style-react-grid-layout-styles-react-resizable-handle {
+  background: url('data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA2IDYiIHN0eWxlPSJiYWNrZ3JvdW5kLWNvbG9yOiNmZmZmZmYwMCIgeD0iMHB4IiB5PSIwcHgiIHdpZHRoPSI2cHgiIGhlaWdodD0iNnB4Ij48ZyBvcGFjaXR5PSIwLjMwMiI+PHBhdGggZD0iTSA2IDYgTCAwIDYgTCAwIDQuMiBMIDQgNC4yIEwgNC4yIDQuMiBMIDQuMiAwIEwgNiAwIEwgNiA2IEwgNiA2IFoiIGZpbGw9IiMwMDAwMDAiLz48L2c+PC9zdmc+');
+  background-position: bottom right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
 }
 
