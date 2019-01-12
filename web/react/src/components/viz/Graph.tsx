@@ -55,12 +55,12 @@ export class Graph extends PureComponent<GraphProps> {
   element: any;
 
   componentDidUpdate(prevProps: GraphProps) {
-    this.draw();
+    // this.draw();
   }
 
   componentDidMount() {
-    this.draw();
-    this.tooltip = new GraphTooltip(this.element);
+    // this.draw();
+    // this.tooltip = new GraphTooltip(this.element);
   }
 
   draw() {
@@ -113,7 +113,7 @@ export class Graph extends PureComponent<GraphProps> {
     }
   }
   onGraphHover(evt) {
-    this.tooltip.show(evt.pos);
+    // this.tooltip.show(evt.pos);
   }
   render() {
     return (
