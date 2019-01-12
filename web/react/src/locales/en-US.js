@@ -74,6 +74,7 @@ export default {
   'menu.task.new': 'Create',
   'menu.task.log': 'Task Log',
   'menu.task.node': 'Task Node',
+  'menu.task.escalation_policy': 'Escalation Policy',
   'menu.setting': 'Setting',
   'menu.setting.user': 'User',
   'menu.setting.notify-config': 'Notify Config',

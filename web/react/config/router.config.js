@@ -52,6 +52,13 @@ export default [
             component: './Task/Node',
             icon: 'database',
           },
+          {
+            path: '/task/escalation_policy',
+            name: 'escalation_policy',
+            permission: 'task.escalation_policy',
+            component: './Task/EscalationPolicy',
+            icon: 'database',
+          },
         ],
       },
       // forms

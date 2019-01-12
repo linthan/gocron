@@ -72,6 +72,7 @@ export default {
   'menu.task.new': '创建',
   'menu.task.log': '任务日志',
   'menu.task.node': '任务节点',
+  'menu.task.escalation_policy': '升级策略',
   'menu.setting': '系统配置',
   'menu.setting.user': '用户管理',
   'menu.setting.notify-config': '通知配置',
