@@ -2,19 +2,20 @@ package model
 
 import (
 	"context"
-	"fmt"
+	"errors"
 	"time"
 )
 
 //Alert 报警实例
 type Alert struct {
-	Status       string
-	alertTimer   *time.Timer
-	level        int
-	done         chan int
-	assign       chan int
-	assignTicker *time.Ticker
-	assignee     string
+	Status           string
+	alertTimer       *time.Timer
+	level            int
+	done             chan int
+	assign           chan int
+	assignTicker     *time.Ticker
+	assignee         string
+	escalationPolicy *EscalationPolicy
 }
 
 //New 初始化一个报警
@@ -25,6 +26,18 @@ func New() *Alert {
 		assign:     make(chan int),
 		level:      0,
 		Status:     "active",
+		escalationPolicy: &EscalationPolicy{
+			Rules: []EscalationRule{
+				EscalationRule{
+					AfterTime: time.Second * 10,
+					Targets:   []Target{},
+				},
+				EscalationRule{
+					AfterTime: time.Second * 10,
+					Targets:   []Target{},
+				},
+			},
+		},
 	}
 	go a.Escalation()
 	return a
@@ -37,17 +50,17 @@ func (a *Alert) Escalation() {
 	for {
 		select {
 		case <-a.alertTimer.C:
-			a.alertTimer.Reset(10 * time.Second)
 			a.level++
-			fmt.Println("----", a.level)
-			if a.level == 3 {
-				a.Done()
+			nextDuration, err := a.GetDuration()
+			if err != nil {
+				a.Status = "none"
+				return
 			}
+			a.alertTimer.Reset(nextDuration)
 		case <-a.assign:
 			a.Status = "assign"
 			return
 		case <-a.done:
-			fmt.Println("-------done")
 			a.Status = "done"
 			return
 		}
@@ -75,4 +88,15 @@ func (a *Alert) AssignTo(assignee string) {
 //Done 关闭
 func (a *Alert) Done() {
 	close(a.done)
+}
+
+//GetDuration 获取间隔时间
+func (a *Alert) GetDuration() (ret time.Duration, err error) {
+	if a.escalationPolicy == nil || len(a.escalationPolicy.Rules) == 0 {
+		err = errors.New("没有升级策略")
+		return
+	}
+	tmp := a.level % len(a.escalationPolicy.Rules)
+	ret = a.escalationPolicy.Rules[tmp].AfterTime
+	return
 }
