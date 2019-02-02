@@ -30,11 +30,15 @@ func New() *Alert {
 			Rules: []EscalationRule{
 				EscalationRule{
 					AfterTime: time.Second * 10,
-					Targets:   []Target{},
+					Targets: []Target{
+						EmailTarget{},
+					},
 				},
 				EscalationRule{
 					AfterTime: time.Second * 10,
-					Targets:   []Target{},
+					Targets: []Target{
+						EmailTarget{},
+					},
 				},
 			},
 		},
