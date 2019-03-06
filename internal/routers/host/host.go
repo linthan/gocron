@@ -58,7 +58,7 @@ func Detail(ctx *macaron.Context) string {
 	id := ctx.ParamsInt(":id")
 	err := hostModel.Find(id)
 	jsonResp := utils.JsonResponse{}
-	if err != nil || hostModel.ID == 0 {
+	if err != nil || hostModel.Id == 0 {
 		logger.Errorf("获取主机详情失败#主机id-%d", id)
 		return jsonResp.Success(utils.SuccessContent, nil)
 	}
@@ -175,7 +175,7 @@ func Ping(ctx *macaron.Context) string {
 	hostModel := new(models.Host)
 	err := hostModel.Find(id)
 	json := utils.JsonResponse{}
-	if err != nil || hostModel.ID <= 0 {
+	if err != nil || hostModel.Id <= 0 {
 		return json.CommonFailure("主机不存在", err)
 	}
 

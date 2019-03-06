@@ -6,7 +6,7 @@ import (
 
 //Host 主机
 type Host struct {
-	ID        int16  `json:"id" xorm:"smallint pk autoincr"`
+	Id        int16  `json:"id" xorm:"smallint pk autoincr"`
 	Name      string `json:"name" xorm:"varchar(64) notnull"`                // 主机名称
 	Alias     string `json:"alias" xorm:"varchar(32) notnull default '' "`   // 主机别名
 	Port      int    `json:"port" xorm:"notnull default 22"`                 // 主机端口
@@ -19,7 +19,7 @@ type Host struct {
 func (host *Host) Create() (insertID int16, err error) {
 	_, err = Db.Insert(host)
 	if err == nil {
-		insertID = host.ID
+		insertID = host.Id
 	}
 
 	return
