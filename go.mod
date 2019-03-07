@@ -1,41 +1,35 @@
-// +heroku goVersion go1.11
-// +heroku install ./cmd/gocron/...
 module github.com/linthan/gocron
 
-// go: no requirements found in vendor/vendor.json
-
 require (
-	github.com/Knetic/govaluate v3.0.0+incompatible // indirect
-	github.com/Tang-RoseChild/mahonia v0.0.0-20131226213531-0eef680515cc
-	github.com/Unknwon/com v0.0.0-20181010210213-41959bdd855f // indirect
-	github.com/casbin/casbin v1.7.0
-	github.com/casbin/xorm-adapter v0.0.0-20180421154100-6d86407ce263
-	github.com/cihub/seelog v0.0.0-20170130134532-f561c5e57575
-	github.com/dgrijalva/jwt-go v3.2.0+incompatible
-	github.com/go-gomail/gomail v0.0.0-20160411212932-81ebce5c23df
-	github.com/go-macaron/binding v0.0.0-20170611065819-ac54ee249c27
-	github.com/go-macaron/gzip v0.0.0-20160222043647-cad1c6580a07
-	github.com/go-macaron/inject v0.0.0-20160627170012-d8a0b8677191 // indirect
-	github.com/go-macaron/toolbox v0.0.0-20180818072302-a77f45a7ce90
-	github.com/go-sql-driver/mysql v1.4.1
-	github.com/go-xorm/core v0.6.0
-	github.com/go-xorm/xorm v0.7.1
-	github.com/golang/protobuf v1.2.0
-	github.com/inconshreveable/mousetrap v1.0.0 // indirect
-	github.com/jakecoffman/cron v0.0.0-20160912164250-57ac9950da80
-	github.com/klauspost/compress v1.4.1 // indirect
-	github.com/klauspost/cpuid v1.2.0 // indirect
-	github.com/lib/pq v1.0.0
-	github.com/ouqiang/goutil v1.0.3
-	github.com/rakyll/statik v0.1.5
-	github.com/silenceper/pool v0.0.0-20180914144519-b2541842a157
-	github.com/spf13/cobra v0.0.3 // indirect
-	github.com/spf13/viper v1.3.1 // indirect
-	github.com/urfave/cli v1.20.0
-	golang.org/x/net v0.0.0-20181114220301-adae6a3d119a
-	google.golang.org/appengine v1.3.0 // indirect
-	google.golang.org/grpc v1.16.0
-	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
-	gopkg.in/ini.v1 v1.39.0
-	gopkg.in/macaron.v1 v1.3.1
+	github.com/BurntSushi/toml v0.3.1
+	github.com/Sirupsen/logrus v1.0.6
+	github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737
+	github.com/chasex/redis-go-cluster v1.0.1-0.20161207023922-222d81891f1d // indirect
+	github.com/dreamCodeMan/qcloud-sdk v0.0.0-20180608071910-6d4355af4346 // indirect
+	github.com/gobuffalo/fizz v1.5.0 // indirect
+	github.com/gobuffalo/packd v0.0.0-20181212173646-eca3b8fd6687 // indirect
+	github.com/gobuffalo/packr v1.21.0 // indirect
+	github.com/gobuffalo/pop v4.9.4+incompatible
+	github.com/gobuffalo/x v0.0.0-20181110221217-14085ca3e1a9 // indirect
+	github.com/gomodule/redigo v2.0.0+incompatible
+	github.com/jinzhu/gorm v1.9.2
+	github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a // indirect
+	github.com/juju/ratelimit v1.0.1
+	github.com/labstack/echo v3.3.5+incompatible
+	github.com/labstack/gommon v0.2.8 // indirect
+	github.com/moul/http2curl v1.0.0 // indirect
+	github.com/mozillazg/go-cos v0.11.0
+	github.com/parnurzeal/gorequest v0.2.15
+	github.com/robfig/go-cache v0.0.0-20130306151617-9fc39e0dbf62
+	github.com/sevenNt/echo-pprof v0.1.0
+	github.com/sevennt/echo-pprof v0.1.0 // indirect
+	github.com/sony/gobreaker v0.0.0-20181109014844-d928aaea92e1
+	github.com/spf13/cobra v0.0.3
+	github.com/spf13/viper v1.2.1
+	github.com/valyala/bytebufferpool v1.0.0 // indirect
+	github.com/valyala/fasttemplate v0.0.0-20170224212429-dcecefd839c4 // indirect
+	go.uber.org/atomic v1.3.2 // indirect
+	golang.org/x/net v0.0.0-20190110200230-915654e7eabc // indirect
+	google.golang.org/appengine v1.4.0 // indirect
+	gopkg.in/resty.v1 v1.11.0
 )

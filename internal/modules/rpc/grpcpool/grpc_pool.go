@@ -95,7 +95,7 @@ func (p *GRPCPool) newCommonPool(addr string) error {
 	if ok {
 		return nil
 	}
-	poolConfig := &pool.PoolConfig{
+	poolConfig := &pool.Config{
 		InitialCap: 1,
 		MaxCap:     30,
 		Factory: func() (interface{}, error) {
