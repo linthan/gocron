@@ -21,6 +21,7 @@ require (
 	github.com/go-xorm/core v0.6.0
 	github.com/go-xorm/xorm v0.7.1
 	github.com/golang/protobuf v1.2.0
+	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jakecoffman/cron v0.0.0-20160912164250-57ac9950da80
 	github.com/klauspost/compress v1.4.1 // indirect
 	github.com/klauspost/cpuid v1.2.0 // indirect
@@ -28,8 +29,9 @@ require (
 	github.com/ouqiang/goutil v1.0.3
 	github.com/rakyll/statik v0.1.5
 	github.com/silenceper/pool v0.0.0-20180914144519-b2541842a157
+	github.com/spf13/cobra v0.0.3 // indirect
+	github.com/spf13/viper v1.3.1 // indirect
 	github.com/urfave/cli v1.20.0
-	golang.org/x/crypto v0.0.0-20181112202954-3d3f9f413869 // indirect
 	golang.org/x/net v0.0.0-20181114220301-adae6a3d119a
 	google.golang.org/appengine v1.3.0 // indirect
 	google.golang.org/grpc v1.16.0
