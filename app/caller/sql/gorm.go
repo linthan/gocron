@@ -1,20 +1,20 @@
-package mysql
+package sql
 
 import (
 	"github.com/jinzhu/gorm"
 	"github.com/linthan/gocron/app/caller"
 )
 
-var mysqls = &callerInner{}
+var sqls = &callerInner{}
 
 // Caller 返回对应mysql的实例
 func Caller(key interface{}) *gorm.DB {
-	if val, ok := mysqls.instances.Load(key); ok {
+	if val, ok := sqls.instances.Load(key); ok {
 		return val.(*gorm.DB)
 	}
 	return nil
 }
 
 func init() {
-	caller.Register(mysqls)
+	caller.Register(sqls)
 }

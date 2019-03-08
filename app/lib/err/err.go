@@ -3,6 +3,7 @@ package err
 // 错误信息
 var msgs = map[string]map[int]string{
 	"common": commonMsg,
+	"auth":   authMsg,
 }
 
 //GetErrMsg 获取错误信息

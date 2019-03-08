@@ -3,9 +3,11 @@ package web
 import (
 	"fmt"
 
+	"github.com/linthan/gocron/app/caller"
+
+	"github.com/labstack/echo"
 	"github.com/linthan/gocron/app/http"
 	"github.com/linthan/gocron/app/service"
-	"github.com/labstack/echo"
 	"github.com/sevenNt/echo-pprof"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
@@ -20,7 +22,7 @@ var WebCmd = &cobra.Command{
 	Long:  `web`,
 	Run: func(cmd *cobra.Command, args []string) {
 		e := echo.New()
-
+		caller.Init()
 		//初始化服务
 		service.Init()
 		//添加路由

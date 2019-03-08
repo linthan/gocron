@@ -8,6 +8,7 @@ const (
 	Response       = 100003
 	RequestLimit   = 100004
 	RequestTooMany = 100005
+	ErrBind        = 100006
 
 	// 登录
 	NotLogin = 101001
@@ -21,6 +22,7 @@ var commonMsg = map[int]string{
 	Response:       "数据异常",
 	RequestLimit:   "请求受限",
 	RequestTooMany: "请求太频繁",
+	ErrBind:        "参数绑定错误",
 
 	// 登录
 	NotLogin: "您还未登录",
