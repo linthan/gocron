@@ -2,5 +2,14 @@
     [server.http]
         port=60007
 
-
+[echo]        
+    [echo.sql]
+        [echo.sql.gocron]
+            dsn = "go_web:93vP3xA5q6kr5UAh@tcp(111.230.134.195:4040)/gocron?charset=utf8&parseTime=True&loc=Local&readTimeout=1s&timeout=1s&writeTimeout=1s"
+            maxOpenConns = 30
+            maxIdleConns = 10
+            connMaxLifetime = "300s"
+            level = "panic"
+            debug = true
+                               
                                
