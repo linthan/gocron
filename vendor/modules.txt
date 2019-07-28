@@ -1,23 +1,3 @@
-# git.dz11.com/vega/application v1.0.3
-git.dz11.com/vega/application
-# git.dz11.com/vega/cfg v1.2.16
-git.dz11.com/vega/cfg
-git.dz11.com/vega/cfg/file
-# git.dz11.com/vega/etcher v1.0.20
-git.dz11.com/vega/etcher
-# git.dz11.com/vega/log v1.3.2
-git.dz11.com/vega/log
-git.dz11.com/vega/log/rotate
-# git.dz11.com/vega/minerva v1.6.12
-git.dz11.com/vega/minerva/server/echo
-git.dz11.com/vega/minerva/codec
-git.dz11.com/vega/minerva/server
-git.dz11.com/vega/minerva/server/echo/status
-git.dz11.com/vega/minerva/application
-# git.dz11.com/vega/util v1.0.13
-git.dz11.com/vega/util
-git.dz11.com/vega/util/cast
-git.dz11.com/vega/util/mapx
 # github.com/BurntSushi/toml v0.3.1
 github.com/BurntSushi/toml
 # github.com/Knetic/govaluate v3.0.1-0.20171022003610-9aa49832a739+incompatible
@@ -26,8 +6,6 @@ github.com/Knetic/govaluate
 github.com/Tang-RoseChild/mahonia
 # github.com/Unknwon/com v0.0.0-20190214221849-2d12a219ccaf
 github.com/Unknwon/com
-# github.com/asaskevich/govalidator v0.0.0-20180720115003-f9ffefc3facf
-github.com/asaskevich/govalidator
 # github.com/bradfitz/gomemcache v0.0.0-20180710155616-bc664df96737
 github.com/bradfitz/gomemcache/memcache
 # github.com/casbin/casbin v1.8.1
@@ -49,16 +27,6 @@ github.com/cihub/seelog/archive
 github.com/cihub/seelog/archive/gzip
 github.com/cihub/seelog/archive/tar
 github.com/cihub/seelog/archive/zip
-# github.com/codegangsta/inject v0.0.0-20150114235600-33e0aa1cb7c0
-github.com/codegangsta/inject
-# github.com/coreos/etcd v3.3.10+incompatible
-github.com/coreos/etcd/clientv3
-github.com/coreos/etcd/clientv3/concurrency
-github.com/coreos/etcd/mvcc/mvccpb
-github.com/coreos/etcd/auth/authpb
-github.com/coreos/etcd/etcdserver/api/v3rpc/rpctypes
-github.com/coreos/etcd/etcdserver/etcdserverpb
-github.com/coreos/etcd/pkg/types
 # github.com/davecgh/go-spew v1.1.1
 github.com/davecgh/go-spew/spew
 # github.com/dgrijalva/jwt-go v3.2.0+incompatible
@@ -83,18 +51,10 @@ github.com/go-xorm/builder
 github.com/go-xorm/core
 # github.com/go-xorm/xorm v0.7.1
 github.com/go-xorm/xorm
-# github.com/go-yaml/yaml v2.1.0+incompatible
-github.com/go-yaml/yaml
-# github.com/gogo/protobuf v1.2.0
-github.com/gogo/protobuf/gogoproto
-github.com/gogo/protobuf/proto
-github.com/gogo/protobuf/protoc-gen-gogo/descriptor
 # github.com/golang/protobuf v1.2.0
 github.com/golang/protobuf/proto
-github.com/golang/protobuf/jsonpb
-github.com/golang/protobuf/ptypes/any
-github.com/golang/protobuf/ptypes/struct
 github.com/golang/protobuf/ptypes
+github.com/golang/protobuf/ptypes/any
 github.com/golang/protobuf/ptypes/duration
 github.com/golang/protobuf/ptypes/timestamp
 # github.com/gomodule/redigo v2.0.0+incompatible
@@ -121,8 +81,6 @@ github.com/jinzhu/gorm/dialects/postgres
 github.com/jinzhu/gorm
 # github.com/jinzhu/inflection v0.0.0-20180308033659-04140366298a
 github.com/jinzhu/inflection
-# github.com/json-iterator/go v1.1.5
-github.com/json-iterator/go
 # github.com/juju/ratelimit v1.0.1
 github.com/juju/ratelimit
 # github.com/klauspost/compress v1.4.1
@@ -147,10 +105,6 @@ github.com/mattn/go-colorable
 github.com/mattn/go-isatty
 # github.com/mitchellh/mapstructure v1.1.2
 github.com/mitchellh/mapstructure
-# github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd
-github.com/modern-go/concurrent
-# github.com/modern-go/reflect2 v1.0.1
-github.com/modern-go/reflect2
 # github.com/ouqiang/goutil v1.0.8
 github.com/ouqiang/goutil
 # github.com/pelletier/go-toml v1.2.0
@@ -205,8 +159,6 @@ golang.org/x/crypto/pbkdf2
 golang.org/x/crypto/acme
 # golang.org/x/net v0.0.0-20190110200230-915654e7eabc
 golang.org/x/net/context
-golang.org/x/net/netutil
-golang.org/x/net/websocket
 golang.org/x/net/trace
 golang.org/x/net/internal/timeseries
 golang.org/x/net/http2
@@ -222,16 +174,13 @@ golang.org/x/text/secure/bidirule
 golang.org/x/text/unicode/bidi
 # google.golang.org/appengine v1.4.0
 google.golang.org/appengine/cloudsql
-# google.golang.org/genproto v0.0.0-20181221175505-bd9b4fb69e2f
+# google.golang.org/genproto v0.0.0-20180817151627-c66870c02cf8
 google.golang.org/genproto/googleapis/rpc/status
 # google.golang.org/grpc v1.19.0
 google.golang.org/grpc/credentials
 google.golang.org/grpc
 google.golang.org/grpc/codes
 google.golang.org/grpc/grpclog
-google.golang.org/grpc/metadata
-google.golang.org/grpc/naming
-google.golang.org/grpc/status
 google.golang.org/grpc/credentials/internal
 google.golang.org/grpc/balancer
 google.golang.org/grpc/balancer/roundrobin
@@ -247,16 +196,18 @@ google.golang.org/grpc/internal/grpcrand
 google.golang.org/grpc/internal/grpcsync
 google.golang.org/grpc/internal/transport
 google.golang.org/grpc/keepalive
+google.golang.org/grpc/metadata
+google.golang.org/grpc/naming
 google.golang.org/grpc/peer
 google.golang.org/grpc/resolver
 google.golang.org/grpc/resolver/dns
 google.golang.org/grpc/resolver/passthrough
 google.golang.org/grpc/stats
+google.golang.org/grpc/status
 google.golang.org/grpc/tap
 google.golang.org/grpc/balancer/base
 google.golang.org/grpc/binarylog/grpc_binarylog_v1
 google.golang.org/grpc/internal/syscall
-google.golang.org/grpc/health/grpc_health_v1
 # gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc
 gopkg.in/alexcesaro/quotedprintable.v3
 # gopkg.in/ini.v1 v1.42.0
