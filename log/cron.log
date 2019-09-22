@@ -689,3 +689,31 @@
 2019-07-28/20:44:14 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#176行#[[应用准备退出]]
 2019-07-28/20:44:14 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#178行#[[停止定时任务调度]]
 2019-07-28/20:44:14 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown.func1#169行#[[已退出]]
+2019-09-22/05:30:19 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#110行#[[开始初始化定时任务]]
+2019-09-22/05:30:20 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#130行#定时任务初始化完成, 共1个定时任务添加到调度器
+2019-09-22/05:31:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.catchSignal#156行#[[收到信号 --  interrupt]]
+2019-09-22/05:31:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#176行#[[应用准备退出]]
+2019-09-22/05:31:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#178行#[[停止定时任务调度]]
+2019-09-22/05:31:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown.func1#169行#[[已退出]]
+2019-09-22/05:43:31 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#110行#[[开始初始化定时任务]]
+2019-09-22/05:43:31 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#130行#定时任务初始化完成, 共1个定时任务添加到调度器
+2019-09-22/05:50:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.catchSignal#156行#[[收到信号 --  interrupt]]
+2019-09-22/05:50:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#176行#[[应用准备退出]]
+2019-09-22/05:50:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#178行#[[停止定时任务调度]]
+2019-09-22/05:50:26 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown.func1#169行#[[已退出]]
+2019-09-22/05:55:47 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#110行#[[开始初始化定时任务]]
+2019-09-22/05:55:48 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#130行#定时任务初始化完成, 共1个定时任务添加到调度器
+2019-09-22/14:22:19 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.createJob.func1#331行#开始执行任务#首席专包同步数据#命令-../shouxizhuanbao/bin/shouxizhuanbao cron sync --config ../shouxizhuanbao/config/config-prod.toml
+2019-09-22/14:22:20 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.createJob.func1#333行#任务完成#首席专包同步数据#命令-../shouxizhuanbao/bin/shouxizhuanbao cron sync --config ../shouxizhuanbao/config/config-prod.toml
+2019-09-22/14:35:49 [WRN] #J:/go/src/github.com/linthan/gocron/internal/modules/utils/json.go#github.com/linthan/gocron/internal/modules/utils.(*JsonResponse).CommonFailure#49行#[[[无法连接远程服务器]]]
+2019-09-22/14:35:50 [WRN] #J:/go/src/github.com/linthan/gocron/internal/modules/utils/json.go#github.com/linthan/gocron/internal/modules/utils.(*JsonResponse).CommonFailure#49行#[[[无法连接远程服务器]]]
+2019-09-22/14:56:20 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.catchSignal#156行#[[收到信号 --  interrupt]]
+2019-09-22/14:56:20 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#176行#[[应用准备退出]]
+2019-09-22/14:56:20 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#178行#[[停止定时任务调度]]
+2019-09-22/14:56:20 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown.func1#169行#[[已退出]]
+2019-09-22/14:56:22 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#110行#[[开始初始化定时任务]]
+2019-09-22/14:56:23 [INF] #J:/go/src/github.com/linthan/gocron/internal/service/task.go#github.com/linthan/gocron/internal/service.Task.Initialize#130行#定时任务初始化完成, 共1个定时任务添加到调度器
+2019-09-22/14:59:10 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.catchSignal#156行#[[收到信号 --  interrupt]]
+2019-09-22/14:59:10 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#176行#[[应用准备退出]]
+2019-09-22/14:59:10 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown#178行#[[停止定时任务调度]]
+2019-09-22/14:59:10 [INF] #J:/go/src/github.com/linthan/gocron/cmd/gocron/gocron.go#main.shutdown.func1#169行#[[已退出]]

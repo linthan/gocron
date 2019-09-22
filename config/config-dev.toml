@@ -1,6 +1,6 @@
 [server]
     [server.http]
-        port=60007
+        port=5921
 
 [echo]        
     [echo.sql]
@@ -11,5 +11,6 @@
             connMaxLifetime = "300s"
             level = "panic"
             debug = true
-                               
+[jwt]
+    token="4f7fc56fd6f302aee120ad3501856098b6f9b9d5a42fcbe57b1f2d1859842c1b"                               
                                

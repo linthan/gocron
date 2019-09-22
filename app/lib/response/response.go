@@ -9,8 +9,8 @@ import (
 
 //JSONResult json数据
 type JSONResult struct {
-	Error int         `json:"error"`
-	Msg   string      `json:"msg"`
+	Error int         `json:"code"`
+	Msg   string      `json:"message"`
 	Data  interface{} `json:"data"`
 }
 

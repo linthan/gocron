@@ -5,6 +5,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/spf13/viper"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
 )
@@ -42,7 +44,7 @@ func NewAuth(domain string, loginURL string) *Auth {
 				return errors.New("没有token")
 			}
 			token, err := jwt.Parse(authToken, func(*jwt.Token) (interface{}, error) {
-				return []byte(""), nil
+				return []byte(viper.GetString("jwt.token")), nil
 			})
 			if err != nil {
 				return err

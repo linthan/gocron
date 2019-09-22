@@ -63,6 +63,11 @@ export default {
     '@antv/data-set': 'DataSet',
   },
   proxy: {
+    '/api/user': {
+      target: 'http://localhost:5921',
+      changeOrigin: true,
+      // pathRewrite: { '^/api': '' },
+    },
     '/api/': {
       target: 'http://localhost:5920',
       changeOrigin: true,

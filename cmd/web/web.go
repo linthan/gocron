@@ -3,12 +3,11 @@ package web
 import (
 	"fmt"
 
-	"github.com/linthan/gocron/app/caller"
-
 	"github.com/labstack/echo"
+	"github.com/linthan/gocron/app/caller"
 	"github.com/linthan/gocron/app/http"
 	"github.com/linthan/gocron/app/service"
-	"github.com/sevenNt/echo-pprof"
+	echopprof "github.com/sevenNt/echo-pprof"
 	"github.com/spf13/cobra"
 	"github.com/spf13/viper"
 )

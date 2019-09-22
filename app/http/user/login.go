@@ -3,6 +3,8 @@ package user
 import (
 	"time"
 
+	"github.com/spf13/viper"
+
 	"github.com/dgrijalva/jwt-go"
 	"github.com/labstack/echo"
 	vuser "github.com/linthan/gocron/app/http/vo/user"
@@ -52,5 +54,5 @@ func generateToken(user *suser.User) (string, error) {
 	claims["is_admin"] = user.IsAdmin
 	token.Claims = claims
 
-	return token.SignedString([]byte(""))
+	return token.SignedString([]byte(viper.GetString("jwt.token")))
 }

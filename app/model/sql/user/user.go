@@ -49,7 +49,7 @@ func (s *SQLDB) encryptPassword(password, salt string) string {
 }
 
 //List 判断是否有错误
-func (s *SQLDB) List(req vuser.ListReq) (ret []User, total int, err error) {
+func (s *SQLDB) List(req *vuser.ListReq) (ret []User, total int, err error) {
 	//获取长度
 	sql.Caller(s.master).Table(s.table).Count(&total)
 	//计算size

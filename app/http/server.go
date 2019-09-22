@@ -37,6 +37,8 @@ func Example(g *echo.Group) {
 
 //User 用户
 func User(g *echo.Group) {
+	g.GET("", user.Index, authmw.Func())
+
 	g.POST("/login", user.Login)
-	g.GET("/list", user.Login, authmw.Func())
+
 }
