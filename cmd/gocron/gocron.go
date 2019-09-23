@@ -25,7 +25,7 @@ var (
 )
 
 // web服务器默认端口
-const DefaultPort = 5920
+const DefaultPort = 60027
 
 func main() {
 	cliApp := cli.NewApp()

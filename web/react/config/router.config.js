@@ -19,7 +19,7 @@ export default [
   {
     path: '/',
     permission: '*',
-    component: '../layouts/BasicLayout',
+    component: '../layouts/OmniLayout',
     Routes: ['src/pages/Authorized'],
     authority: ['admin', 'user'],
     routes: [

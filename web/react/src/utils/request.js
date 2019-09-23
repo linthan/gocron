@@ -5,6 +5,16 @@ import hash from 'hash.js';
 import { getAuthToken } from '@/utils/authority';
 import { isAntdPro } from './utils';
 
+const getEnv = () => {
+  const domain = window.location.host;
+  if (/^.*front_local.*?\..*$/g.test(domain)) {
+    return 'dev';
+  }
+  return 'prod';
+};
+
+const defaultDomain = getEnv() === 'dev' ? '/' : '/cron';
+
 const codeMessage = {
   200: '服务器成功返回请求的数据。',
   201: '新建或修改数据成功。',
@@ -66,9 +76,16 @@ const cachedSave = (response, hashcode) => {
  */
 export default function request(url, option) {
   const options = {
-    expirys: isAntdPro(),
+    // expirys: isAntdPro(),
     ...option,
   };
+  let url1;
+  if (url && url[0] === '/') {
+    url1 = `${defaultDomain}${url}`;
+  } else {
+    url1 = url;
+  }
+
   /**
    * Produce fingerprints based on url and parameters
    * Maybe url has the same parameters
@@ -120,7 +137,7 @@ export default function request(url, option) {
       sessionStorage.removeItem(`${hashcode}:timestamp`);
     }
   }
-  return fetch(url, newOptions)
+  return fetch(url1, newOptions)
     .then(checkStatus)
     .then(response => cachedSave(response, hashcode))
     .then(response => {

@@ -6,7 +6,8 @@ import defaultSettings from '../src/defaultSettings';
 
 export default {
   history: 'hash',
-  publicPath: '/public/',
+  hash: false,
+  publicPath: '/cron/',
   // add for transfer to umi
   plugins: [
     [
@@ -63,6 +64,11 @@ export default {
     '@antv/data-set': 'DataSet',
   },
   proxy: {
+    '/api/base': {
+      target: 'http://c.melican.cn',
+      changeOrigin: true,
+      // pathRewrite: { '^/api': '' },
+    },
     '/api/': {
       target: 'http://localhost:5920',
       changeOrigin: true,

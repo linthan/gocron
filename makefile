@@ -1,5 +1,10 @@
+BIN_NAME=gocron
+
 .PHONY: build
 build: gocron node
+
+.PHONY: build-linux
+build-linux: gocron-linux node-linux
 
 .PHONY: build-race
 build-race: enable-race build
@@ -23,6 +28,14 @@ gocron:
 .PHONY: node
 node:
 	go build $(RACE) -o bin/gocron-node ./cmd/node
+
+.PHONY: gocron-linux
+gocron-linux:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(RACE) -o bin/gocron ./cmd/gocron
+
+.PHONY: node-linux
+node-linux:
+	CGO_ENABLED=0 GOOS=linux GOARCH=amd64 go build $(RACE) -o bin/gocron-node ./cmd/node
 
 .PHONY: test
 test:
@@ -79,3 +92,7 @@ statik:
 clean:
 	rm bin/gocron
 	rm bin/gocron-node
+
+.PHONY:zip
+zip:
+	zip -r ${BIN_NAME} bin conf >/dev/null
